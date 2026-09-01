@@ -7,6 +7,7 @@
 <title>ถึงคนพิเศษของเรา 💕</title>
 
 <style>
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -20,6 +21,7 @@ body {
     background: linear-gradient(135deg, #ffd6e7, #e6d6ff);
     color: #5a4050;
 }
+
 
 /* =========================
    หน้าต่างแต่ละหน้า
@@ -42,6 +44,7 @@ body {
     visibility: visible;
 }
 
+
 /* =========================
    หน้าแรก
 ========================= */
@@ -61,6 +64,7 @@ body {
     font-size: 1.1rem;
     margin-bottom: 25px;
 }
+
 
 /* =========================
    COUNTDOWN
@@ -105,6 +109,7 @@ body {
     font-size: 0.7rem;
 }
 
+
 /* =========================
    กล่องของขวัญ
 ========================= */
@@ -129,7 +134,7 @@ body {
     height: 115px;
     background: #ff8fb8;
     border-radius: 8px;
-    box-shadow: 0 15px 30px rgba(150, 80, 110, 0.25);
+    box-shadow: 0 15px 30px rgba(150,80,110,0.25);
 }
 
 .box::before {
@@ -161,6 +166,7 @@ body {
     height: 38px;
     background: #ffd166;
 }
+
 
 /* โบว์ */
 
@@ -196,6 +202,7 @@ body {
     z-index: 5;
 }
 
+
 /* ตอนเปิดกล่อง */
 
 .gift.open .lid {
@@ -207,10 +214,21 @@ body {
 }
 
 @keyframes giftOpen {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.15); }
-    100% { transform: scale(1); }
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
 }
+
 
 /* =========================
    ปุ่ม
@@ -225,7 +243,7 @@ body {
     font-size: 1.05rem;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 8px 20px rgba(255, 114, 163, 0.3);
+    box-shadow: 0 8px 20px rgba(255,114,163,0.3);
     transition: 0.3s;
 }
 
@@ -233,8 +251,9 @@ body {
     transform: translateY(-3px);
 }
 
+
 /* =========================
-   หน้ารหัส
+   หน้ารหัสผ่าน
 ========================= */
 
 .password-card {
@@ -272,6 +291,7 @@ body {
     border-color: #ff72a3;
 }
 
+
 /* ข้อความผิด */
 
 .error {
@@ -280,6 +300,7 @@ body {
     min-height: 25px;
 }
 
+
 /* เขย่ากล่อง */
 
 .shake {
@@ -287,10 +308,21 @@ body {
 }
 
 @keyframes shake {
-    0%,100% { transform: translateX(0); }
-    25% { transform: translateX(-10px); }
-    75% { transform: translateX(10px); }
+
+    0%,100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-10px);
+    }
+
+    75% {
+        transform: translateX(10px);
+    }
+
 }
+
 
 /* =========================
    หน้าเมนู
@@ -304,6 +336,10 @@ body {
     margin-bottom: 20px;
 }
 
+.menu-subtitle {
+    margin-bottom: 25px;
+}
+
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -313,16 +349,23 @@ body {
 
 .menu-item {
     background: white;
+    border: none;
     padding: 30px 15px;
     border-radius: 20px;
     font-size: 2rem;
+    color: #5a4050;
     box-shadow: 0 8px 20px rgba(100,60,100,0.15);
     cursor: pointer;
     transition: 0.3s;
+    font-family: inherit;
 }
 
 .menu-item:hover {
     transform: translateY(-4px);
+}
+
+.menu-item:active {
+    transform: scale(0.97);
 }
 
 .menu-item span {
@@ -330,6 +373,76 @@ body {
     font-size: 0.9rem;
     margin-top: 8px;
 }
+
+
+/* =========================
+   หน้าจดหมาย
+========================= */
+
+.letter-card {
+    width: 100%;
+    max-width: 500px;
+    max-height: 85vh;
+    overflow-y: auto;
+    background: rgba(255,255,255,0.95);
+    padding: 30px 25px;
+    border-radius: 28px;
+    text-align: left;
+    box-shadow: 0 20px 50px rgba(100,60,100,0.2);
+    animation: letterAppear 0.6s ease;
+}
+
+.letter-icon {
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.letter-card h2 {
+    text-align: center;
+    color: #e75480;
+    margin-bottom: 20px;
+}
+
+.letter-content {
+    background: #fff7fb;
+    border-radius: 18px;
+    padding: 22px 20px;
+    line-height: 1.9;
+    color: #5a4050;
+    margin-bottom: 25px;
+}
+
+.letter-content p {
+    margin-bottom: 15px;
+}
+
+.letter-sign {
+    text-align: right;
+    margin-top: 20px;
+    color: #e75480;
+    font-weight: bold;
+}
+
+.letter-card .main-btn {
+    display: block;
+    margin: 0 auto;
+}
+
+@keyframes letterAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
 
 /* =========================
    มือถือ
@@ -369,70 +482,19 @@ body {
     .gift:hover {
         transform: scale(0.95);
     }
-}
-    /* =========================
-   หน้าจดหมาย
-========================= */
 
-.letter-card {
-    width: 100%;
-    max-width: 500px;
-    background: rgba(255,255,255,0.94);
-    padding: 35px 28px;
-    border-radius: 28px;
-    text-align: left;
-    box-shadow: 0 20px 50px rgba(100,60,100,0.2);
-    animation: letterAppear 0.6s ease;
-}
-
-.letter-icon {
-    text-align: center;
-    font-size: 4rem;
-    margin-bottom: 10px;
-}
-
-.letter-card h2 {
-    text-align: center;
-    color: #e75480;
-    margin-bottom: 25px;
-}
-
-.letter-content {
-    background: #fff7fb;
-    border-radius: 18px;
-    padding: 25px 20px;
-    line-height: 1.9;
-    color: #5a4050;
-    margin-bottom: 25px;
-}
-
-.letter-sign {
-    text-align: right;
-    margin-top: 20px;
-    color: #e75480;
-    font-weight: bold;
-}
-
-.letter-card .main-btn {
-    display: block;
-    margin: 0 auto;
-}
-
-@keyframes letterAppear {
-    from {
-        opacity: 0;
-        transform: translateY(20px) scale(0.97);
+    .letter-card {
+        padding: 25px 20px;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
 }
+
 </style>
 </head>
 
+
 <body>
+
 
 <!-- =================================
      หน้าแรก
@@ -488,7 +550,11 @@ body {
 
         <!-- กล่องของขวัญ -->
 
-        <div class="gift" id="gift" onclick="openGift()">
+        <div
+            class="gift"
+            id="gift"
+            onclick="openGift()"
+        >
 
             <div class="bow-left"></div>
             <div class="bow-right"></div>
@@ -500,7 +566,10 @@ body {
         </div>
 
 
-        <button class="main-btn" onclick="openGift()">
+        <button
+            class="main-btn"
+            onclick="openGift()"
+        >
             🎁 เปิดของขวัญ
         </button>
 
@@ -515,14 +584,19 @@ body {
 
 <section id="passwordScreen" class="screen">
 
-    <div class="password-card" id="passwordCard">
+    <div
+        class="password-card"
+        id="passwordCard"
+    >
 
         <h2>🔐 รหัสลับของเรา</h2>
 
         <p>
             จำรหัสนี้ได้ไหม? 👀
             <br>
-            <small>Hint: วันที่สำคัญของเรา 💕</small>
+            <small>
+                Hint: วันที่สำคัญของเรา 💕
+            </small>
         </p>
 
         <input
@@ -533,11 +607,17 @@ body {
             placeholder="••••"
         >
 
-        <button class="main-btn" onclick="checkPassword()">
+        <button
+            class="main-btn"
+            onclick="checkPassword()"
+        >
             💗 ยืนยัน
         </button>
 
-        <div class="error" id="errorMessage"></div>
+        <div
+            class="error"
+            id="errorMessage"
+        ></div>
 
     </div>
 
@@ -552,109 +632,127 @@ body {
 
     <div class="menu-card">
 
-        <h2>💕 ยินดีต้อนรับ 💕</h2>
+        <h2>💕 ยินดีต้อนรับนะ 💕</h2>
 
-        <p style="margin-bottom:25px;">
-            คุณเปิดประตูเข้ามาได้แล้ว!
+        <p class="menu-subtitle">
+            มีอะไรบางอย่างอยากให้เธอเปิดดู...
         </p>
 
         <div class="menu-grid">
 
-            <div class="menu-item">
+            <button
+                class="menu-item"
+                onclick="openPage('letter')"
+            >
                 💌
-                <span>จดหมายถึงเธอ</span>
-            </div>
+                <span>
+                    จดหมายถึงเธอ
+                </span>
+            </button>
 
-            <div class="menu-item">
+
+            <button
+                class="menu-item"
+                onclick="openPage('story')"
+            >
                 📖
-                <span>เรื่องราวของเรา</span>
-            </div>
+                <span>
+                    เรื่องราวของเรา
+                </span>
+            </button>
 
-            <div class="menu-item">
+
+            <button
+                class="menu-item"
+                onclick="openPage('game')"
+            >
                 🎮
-                <span>เกมของเรา</span>
-            </div>
+                <span>
+                    เกมของเรา
+                </span>
+            </button>
 
-            <div class="menu-item">
+
+            <button
+                class="menu-item"
+                onclick="openPage('memory')"
+            >
                 📸
-                <span>ความทรงจำ</span>
+                <span>
+                    ความทรงจำ
+                </span>
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =================================
+     หน้าจดหมาย
+================================= -->
+
+<section id="letterScreen" class="screen">
+
+    <div class="letter-card">
+
+        <div class="letter-icon">
+            💌
+        </div>
+
+        <h2>
+            ถึงเธอคนพิเศษของเรา
+        </h2>
+
+        <div class="letter-content">
+
+            <p>
+                ถึงเธอ ❤️
+            </p>
+
+            <p>
+                เราอาจจะไม่ใช่คนที่พูดเก่งที่สุด
+                และบางครั้งก็อาจแสดงความรู้สึกไม่เก่ง
+                แต่มีบางอย่างที่เราอยากบอกเธอ
+            </p>
+
+            <p>
+                ขอบคุณนะที่เข้ามาเป็นส่วนหนึ่งในชีวิตของเรา
+                ขอบคุณสำหรับทุกช่วงเวลาที่เราได้อยู่ด้วยกัน
+                ไม่ว่าจะเป็นวันที่มีความสุข วันที่หัวเราะด้วยกัน
+                หรือแม้แต่วันที่เราไม่เข้าใจกัน
+            </p>
+
+            <p>
+                สำหรับเรา ทุกช่วงเวลาที่มีเธอ
+                ล้วนเป็นความทรงจำที่มีความหมาย 💕
+            </p>
+
+            <p>
+                เราไม่รู้ว่าอนาคตจะเป็นยังไง
+                แต่ในวันนี้เราอยากให้เธอรู้ว่า
+                เราดีใจจริง ๆ ที่มีเธออยู่ข้าง ๆ
+            </p>
+
+            <p>
+                ขอให้เธอมีความสุขมาก ๆ
+                และไม่ว่าจะเกิดอะไรขึ้น
+                อย่าลืมว่ามีคนคนหนึ่งที่รักเธอมากนะ ❤️
+            </p>
+
+            <div class="letter-sign">
+                จากคนที่รักเธอ 💕
             </div>
 
         </div>
 
-    </div>
 
-</section>
-
-    </section>
-
-<!-- =================================
-     หน้าจดหมาย
-================================= -->
-
-<section id="pageScreen" class="screen">
-
-    <div class="letter-card">
-
-        <div class="letter-icon">
-            💌
-        </div>
-
-        <h2>
-            จดหมายถึงเธอ
-        </h2>
-
-        <div class="letter-content">
-
-            ข้อความพิเศษของเราจะอยู่ตรงนี้ 💕
-            <br><br>
-            รักเธอนะ ❤️
-
-        </div>
-
-        <div class="letter-sign">
-            จากคนพิเศษของเธอ 💕
-        </div>
-
-        <button class="main-btn" onclick="backToMenu()">
-            💕 กลับไปหน้าเมนู
-        </button>
-
-    </div>
-
-</section>
-
-</section>
-
-<!-- =================================
-     หน้าจดหมาย
-================================= -->
-
-<section id="pageScreen" class="screen">
-
-    <div class="letter-card">
-
-        <div class="letter-icon">
-            💌
-        </div>
-
-        <h2>
-            จดหมายถึงเธอ
-        </h2>
-
-        <div class="letter-content">
-
-            ข้อความพิเศษของเราจะอยู่ตรงนี้ 💕
-            <br><br>
-            รักเธอนะ ❤️
-
-        </div>
-
-        <div class="letter-sign">
-            จากคนพิเศษของเธอ 💕
-        </div>
-
-        <button class="main-btn" onclick="backToMenu()">
+        <button
+            class="main-btn"
+            onclick="backToMenu()"
+        >
             💕 กลับไปหน้าเมนู
         </button>
 
@@ -665,7 +763,6 @@ body {
 
 <script>
 
-<script>
 
 /* =================================
    ตั้งรหัสผ่าน
@@ -685,7 +782,9 @@ const correctPassword = "1404";
 */
 
 const surpriseDate =
-    new Date("2026-09-14T18:00:00+07:00").getTime();
+    new Date(
+        "2026-09-14T18:00:00+07:00"
+    ).getTime();
 
 
 /* =================================
@@ -694,57 +793,75 @@ const surpriseDate =
 
 function updateCountdown() {
 
-    const now = new Date().getTime();
+    const now =
+        new Date().getTime();
 
-    const distance = surpriseDate - now;
+    const distance =
+        surpriseDate - now;
 
-
-    // ถ้าถึงเวลาแล้ว
 
     if (distance <= 0) {
 
-        document.getElementById("days").textContent = "0";
-        document.getElementById("hours").textContent = "0";
-        document.getElementById("minutes").textContent = "0";
-        document.getElementById("seconds").textContent = "0";
+        document.getElementById("days")
+            .textContent = "0";
 
-        document.querySelector(".countdown-title").textContent =
+        document.getElementById("hours")
+            .textContent = "0";
+
+        document.getElementById("minutes")
+            .textContent = "0";
+
+        document.getElementById("seconds")
+            .textContent = "0";
+
+        document.querySelector(
+            ".countdown-title"
+        ).textContent =
             "🎉 ถึงวันพิเศษของเราแล้ว! 🎉";
 
         return;
     }
 
 
-    // คำนวณเวลา
-
     const days =
-        Math.floor(distance / (1000 * 60 * 60 * 24));
+        Math.floor(
+            distance /
+            (1000 * 60 * 60 * 24)
+        );
 
     const hours =
         Math.floor(
-            (distance % (1000 * 60 * 60 * 24))
-            / (1000 * 60 * 60)
+            (distance %
+            (1000 * 60 * 60 * 24)) /
+            (1000 * 60 * 60)
         );
 
     const minutes =
         Math.floor(
-            (distance % (1000 * 60 * 60))
-            / (1000 * 60)
+            (distance %
+            (1000 * 60 * 60)) /
+            (1000 * 60)
         );
 
     const seconds =
         Math.floor(
-            (distance % (1000 * 60))
-            / 1000
+            (distance %
+            (1000 * 60)) /
+            1000
         );
 
 
-    // แสดงผล
+    document.getElementById("days")
+        .textContent = days;
 
-    document.getElementById("days").textContent = days;
-    document.getElementById("hours").textContent = hours;
-    document.getElementById("minutes").textContent = minutes;
-    document.getElementById("seconds").textContent = seconds;
+    document.getElementById("hours")
+        .textContent = hours;
+
+    document.getElementById("minutes")
+        .textContent = minutes;
+
+    document.getElementById("seconds")
+        .textContent = seconds;
 }
 
 
@@ -752,7 +869,10 @@ function updateCountdown() {
 
 updateCountdown();
 
-setInterval(updateCountdown, 1000);
+setInterval(
+    updateCountdown,
+    1000
+);
 
 
 /* =================================
@@ -761,12 +881,11 @@ setInterval(updateCountdown, 1000);
 
 function openGift() {
 
-    const gift = document.getElementById("gift");
+    const gift =
+        document.getElementById("gift");
 
     gift.classList.add("open");
 
-
-    // รอ animation ก่อนเปลี่ยนหน้า
 
     setTimeout(() => {
 
@@ -776,7 +895,8 @@ function openGift() {
         document.getElementById("passwordScreen")
             .classList.add("active");
 
-        document.getElementById("passwordInput").focus();
+        document.getElementById("passwordInput")
+            .focus();
 
     }, 900);
 }
@@ -789,31 +909,42 @@ function openGift() {
 function checkPassword() {
 
     const input =
-        document.getElementById("passwordInput").value;
+        document.getElementById(
+            "passwordInput"
+        ).value;
 
     const error =
-        document.getElementById("errorMessage");
+        document.getElementById(
+            "errorMessage"
+        );
 
     const card =
-        document.getElementById("passwordCard");
+        document.getElementById(
+            "passwordCard"
+        );
 
 
     if (input === correctPassword) {
 
-        error.textContent = "🎉 ถูกต้อง!";
+        error.textContent =
+            "🎉 ถูกต้อง!";
 
 
         setTimeout(() => {
 
-            document.getElementById("passwordScreen")
-                .classList.remove("active");
+            document.getElementById(
+                "passwordScreen"
+            ).classList.remove("active");
 
-            document.getElementById("menuScreen")
-                .classList.add("active");
+            document.getElementById(
+                "menuScreen"
+            ).classList.add("active");
 
         }, 700);
 
-    } else {
+    }
+
+    else {
 
         error.textContent =
             "❌ รหัสไม่ถูกนะ ลองใหม่อีกครั้ง 💕";
@@ -821,14 +952,14 @@ function checkPassword() {
 
         card.classList.remove("shake");
 
-        // ทำให้ animation เล่นซ้ำ
-
         void card.offsetWidth;
 
         card.classList.add("shake");
 
 
-        document.getElementById("passwordInput").value = "";
+        document.getElementById(
+            "passwordInput"
+        ).value = "";
 
     }
 }
@@ -838,8 +969,11 @@ function checkPassword() {
    กด Enter เพื่อส่งรหัส
 ================================= */
 
-document.getElementById("passwordInput")
-    .addEventListener("keydown", function(event) {
+document.getElementById(
+    "passwordInput"
+).addEventListener(
+    "keydown",
+    function(event) {
 
         if (event.key === "Enter") {
 
@@ -847,7 +981,69 @@ document.getElementById("passwordInput")
 
         }
 
-    });
+    }
+);
+
+
+/* =================================
+   เปิดหน้าต่างจากเมนู
+================================= */
+
+function openPage(page) {
+
+    if (page === "letter") {
+
+        document.getElementById(
+            "menuScreen"
+        ).classList.remove("active");
+
+        document.getElementById(
+            "letterScreen"
+        ).classList.add("active");
+
+    }
+
+    else if (page === "story") {
+
+        alert(
+            "📖 เรื่องราวของเรากำลังเตรียมอยู่ 💕"
+        );
+
+    }
+
+    else if (page === "game") {
+
+        alert(
+            "🎮 เกมของเรากำลังเตรียมอยู่ 😆💕"
+        );
+
+    }
+
+    else if (page === "memory") {
+
+        alert(
+            "📸 ความทรงจำของเรากำลังเตรียมอยู่ 💕"
+        );
+
+    }
+}
+
+
+/* =================================
+   กลับหน้าเมนู
+================================= */
+
+function backToMenu() {
+
+    document.getElementById(
+        "letterScreen"
+    ).classList.remove("active");
+
+    document.getElementById(
+        "menuScreen"
+    ).classList.add("active");
+}
+
 
 </script>
 
