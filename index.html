@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 เซอร์พ้ายส์พิเศษ 🎉</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 600px;
+            text-align: center;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #764ba2;
+            margin-bottom: 20px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .countdown {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            font-size: 1.2em;
+        }
+
+        .countdown-item {
+            display: inline-block;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .countdown-number {
+            font-size: 2em;
+            display: block;
+        }
+
+        .message-box {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            min-height: 100px;
+            border-left: 5px solid #667eea;
+        }
+
+        .message-box p {
+            font-size: 1.1em;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .gallery-item {
+            background: #ddd;
+            height: 150px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 4em;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .reveal-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 20px 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-weight: bold;
+        }
+
+        .reveal-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .reveal-btn:active {
+            transform: scale(0.98);
+        }
+
+        .hidden-content {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            background: #fff3cd;
+            border-radius: 10px;
+            animation: revealAnimation 0.5s ease-out;
+        }
+
+        .hidden-content.revealed {
+            display: block;
+        }
+
+        @keyframes revealAnimation {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #667eea;
+            pointer-events: none;
+            animation: confettiFall 3s ease-out forwards;
+        }
+
+        @keyframes confettiFall {
+            to {
+                transform: translateY(100vh) rotateZ(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* ส่วนการเขียนข้อความ */
+        .feedback-section {
+            display: none;
+            margin-top: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            border-radius: 15px;
+            animation: slideInFeedback 0.6s ease-out;
+        }
+
+        .feedback-section.show {
+            display: block;
+        }
+
+        @keyframes slideInFeedback {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feedback-section h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .feedback-form input,
+        .feedback-form textarea {
+            padding: 12px;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1em;
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .feedback-form textarea {
+            min-height: 120px;
+        }
+
+        .feedback-form input:focus,
+        .feedback-form textarea:focus {
+            outline: none;
+            border-color: #764ba2;
+            box-shadow: 0 0 8px rgba(118, 75, 162, 0.3);
+        }
+
+        .submit-btn {
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #764ba2;
+        }
+
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border: 1px solid #c3e6cb;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .messages-display {
+            margin-top: 30px;
+            max-height: 400px;
+            overflow-y: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #667eea;
+        }
+
+        .message-item {
+            background: #f8f9fa;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .message-item .name {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .message-item .text {
+            color: #333;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .message-item .date {
+            font-size: 0.8em;
+            color: #999;
+            margin-top: 8px;
+        }
+
+        .no-messages {
+            text-align: center;
+            color: #999;
+            padding: 20px;
+        }
+
+        footer {
+            margin-top: 30px;
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab-btn {
+            background: white;
+            border: 2px solid #667eea;
+            color: #667eea;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .tab-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 เซอร์พ้ายส์!</h1>
+        <p class="subtitle">มีสิ่งพิเศษรอคุณอยู่ 🎁</p>
+
+        <div class="countdown" id="countdown">
+            <div class="countdown-item">
+                <span class="countdown-number" id="days">0</span>
+                วัน
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="hours">0</span>
+                ชั่วโมง
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="minutes">0</span>
+                นาที
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="seconds">0</span>
+                วินาที
+            </div>
+        </div>
+
+        <div class="message-box">
+            <p>✨ ขออนุญาติเก็บสิ่งพิเศษไว้ก่อน ในวันนั้นจะเปิดให้คุณดูนะ!</p>
+        </div>
+
+        <div class="gallery">
+            <div class="gallery-item">🎂</div>
+            <div class="gallery-item">🎈</div>
+            <div class="gallery-item">🎊</div>
+            <div class="gallery-item">🎁</div>
+        </div>
+
+        <button class="reveal-btn" onclick="revealSurprise()">🎁 เปิดเซอร์พ้ายส์!</button>
+
+        <div class="hidden-content" id="hiddenContent">
+            <h2>🌟 เซอร์พ้ายส์พิเศษของคุณ! 🌟</h2>
+            <p>ขอสุขสันต์วันเกิด / วันพิเศษของคุณ! 🎉</p>
+            <p>ขอบคุณที่เป็นส่วนพิเศษในชีวิตของเรา 💕</p>
+            <p>เรารักคุณนะ! ❤️</p>
+
+            <!-- ส่วนข้อความตอบกลับ -->
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('form')">✍️ เขียนข้อความ</button>
+                <button class="tab-btn" onclick="showTab('messages')">💬 ข้อความทั้งหมด</button>
+            </div>
+
+            <div class="feedback-section" id="feedbackSection">
+                <h3>💌 ขอให้เขียนความในใจของคุณสิ!</h3>
+                <p style="color: #333; margin-bottom: 20px;">บอกเรากันสิว่าคุณรู้สึกเป็นไง ❤️</p>
+                
+                <form class="feedback-form" onsubmit="submitMessage(event)">
+                    <input 
+                        type="text" 
+                        id="senderName" 
+                        placeholder="ชื่อของคุณ (หรือชื่อเล่น) 😊"
+                        required
+                    >
+                    <textarea 
+                        id="messageText" 
+                        placeholder="เขียนความในใจของคุณที่นี่... 💭"
+                        required
+                    ></textarea>
+                    <button type="submit" class="submit-btn">💕 ส่งข้อความ</button>
+                </form>
+
+                <div class="success-message" id="successMessage">
+                    ✨ ขอบคุณค่ะ! ข้อความของคุณถูกบันทึกแล้ว 💕
+                </div>
+            </div>
+
+            <div class="messages-display" id="messagesDisplay" style="display: none;">
+                <h3 style="text-align: center; margin-bottom: 20px; color: #667eea;">💌 ข้อความที่ได้ร��บ</h3>
+                <div id="messagesList" class="no-messages">ยังไม่มีข้อความ... เป็นคนแรกที่เขียนสิ! 🎁</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>💫 สร้างด้วย ❤️ สำหรับคนที่คุณรัก</p>
+        </footer>
+    </div>
+
+    <script>
+        // ตั้งค่าวันเปิด (แก้ไขตามต้องการ)
+        const surpriseDate = new Date('2026-09-15T18:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = surpriseDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = '<h2>🎉 เวลามาถึงแล้ว! 🎉</h2>';
+            }
+        }
+
+        function revealSurprise() {
+            const hiddenContent = document.getElementById('hiddenContent');
+            hiddenContent.classList.add('revealed');
+            const feedbackSection = document.getElementById('feedbackSection');
+            feedbackSection.classList.add('show');
+            
+            // สร้างลูกฟอง
+            for (let i = 0; i < 30; i++) {
+                createConfetti();
+            }
+
+            // โหลดข้อความที่บันทึกไว้
+            loadMessages();
+        }
+
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + '%';
+            confetti.style.backgroundColor = ['#667eea', '#764ba2', '#ff6b6b', '#ffd93d', '#6bcf7f'][Math.floor(Math.random() * 5)];
+            document.body.appendChild(confetti);
+
+            setTimeout(() => confetti.remove(), 3000);
+        }
+
+        // ฟังก์ชันสำหรับเขียนข้อความ
+        function submitMessage(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('senderName').value;
+            const message = document.getElementById('messageText').value;
+
+            if (name.trim() === '' || message.trim() === '') {
+                alert('กรุณากรอกข้อมูลให้ครบ');
+                return;
+            }
+
+            // ดึงข้อความที่บันทึกไว้ก่อนหน้านี้
+            let messages = JSON.parse(localStorage.getItem('messages')) || [];
+
+            // เพิ่มข้อความใหม่
+            const newMessage = {
+                id: Date.now(),
+                name: name,
+                text: message,
+                timestamp: new Date().toLocaleString('th-TH')
+            };
+
+            messages.push(newMessage);
+
+            // บันทึกใน localStorage
+            localStorage.setItem('messages', JSON.stringify(messages));
+
+            // แสดงข้อความสำเร็จ
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.add('show');
+
+            // ล้างฟอร์ม
+            document.getElementById('senderName').value = '';
+            document.getElementById('messageText').value = '';
+
+            // ซ่อนข้อความสำเร็จหลัง 2 วินาที
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 2000);
+
+            // รีเฟรชรายการข้อความ
+            loadMessages();
+        }
+
+        function loadMessages() {
+            const messages = JSON.parse(localStorage.getItem('messages')) || [];
+            const messagesList = document.getElementById('messagesList');
+
+            if (messages.length === 0) {
+                messagesList.innerHTML = '<div class="no-messages">ยังไม่มีข้อความ... เป็นคนแรกที่เขียนสิ! 🎁</div>';
+            } else {
+                messagesList.innerHTML = messages.map(msg => `
+                    <div class="message-item">
+                        <div class="name">❤️ ${escapeHtml(msg.name)}</div>
+                        <div class="text">${escapeHtml(msg.text)}</div>
+                        <div class="date">📅 ${msg.timestamp}</div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+
+        function showTab(tab) {
+            const feedbackSection = document.getElementById('feedbackSection');
+            const messagesDisplay = document.getElementById('messagesDisplay');
+            const tabs = document.querySelectorAll('.tab-btn');
+
+            tabs.forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+
+            if (tab === 'form') {
+                feedbackSection.style.display = 'block';
+                messagesDisplay.style.display = 'none';
+            } else {
+                feedbackSection.style.display = 'none';
+                messagesDisplay.style.display = 'block';
+                loadMessages();
+            }
+        }
+
+        // อัพเดท countdown ทุก 1 วินาที
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
