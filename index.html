@@ -48,6 +48,8 @@ body {
 
 .start-content {
     text-align: center;
+    width: 100%;
+    max-width: 500px;
 }
 
 .start-content h1 {
@@ -57,7 +59,50 @@ body {
 
 .start-content p {
     font-size: 1.1rem;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown {
+    background: rgba(255,255,255,0.75);
+    padding: 18px;
+    border-radius: 20px;
+    margin: 0 auto 25px;
+    box-shadow: 0 8px 25px rgba(100,60,100,0.12);
+}
+
+.countdown-title {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: #7a5267;
+}
+
+.countdown-time {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.countdown-box {
+    background: linear-gradient(135deg, #ff72a3, #c88cff);
+    color: white;
+    border-radius: 12px;
+    padding: 10px 8px;
+    min-width: 65px;
+    box-shadow: 0 5px 12px rgba(150,80,130,0.15);
+}
+
+.countdown-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.countdown-label {
+    font-size: 0.7rem;
 }
 
 /* =========================
@@ -248,7 +293,7 @@ body {
 }
 
 /* =========================
-   หน้าเมนู (เตรียมไว้)
+   หน้าเมนู
 ========================= */
 
 .menu-card {
@@ -272,6 +317,12 @@ body {
     border-radius: 20px;
     font-size: 2rem;
     box-shadow: 0 8px 20px rgba(100,60,100,0.15);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu-item:hover {
+    transform: translateY(-4px);
 }
 
 .menu-item span {
@@ -280,12 +331,35 @@ body {
     margin-top: 8px;
 }
 
-/* มือถือ */
+/* =========================
+   มือถือ
+========================= */
 
 @media (max-width: 500px) {
 
     .start-content h1 {
         font-size: 1.8rem;
+    }
+
+    .countdown {
+        padding: 15px 10px;
+    }
+
+    .countdown-time {
+        gap: 6px;
+    }
+
+    .countdown-box {
+        min-width: 58px;
+        padding: 8px 5px;
+    }
+
+    .countdown-number {
+        font-size: 1.3rem;
+    }
+
+    .countdown-label {
+        font-size: 0.65rem;
     }
 
     .gift {
@@ -317,6 +391,44 @@ body {
             เปิดดูสิ 💕
         </p>
 
+
+        <!-- COUNTDOWN -->
+
+        <div class="countdown">
+
+            <div class="countdown-title">
+                ⏰ นับถอยหลังถึงวันพิเศษของเรา
+            </div>
+
+            <div class="countdown-time">
+
+                <div class="countdown-box">
+                    <span class="countdown-number" id="days">0</span>
+                    <span class="countdown-label">วัน</span>
+                </div>
+
+                <div class="countdown-box">
+                    <span class="countdown-number" id="hours">0</span>
+                    <span class="countdown-label">ชั่วโมง</span>
+                </div>
+
+                <div class="countdown-box">
+                    <span class="countdown-number" id="minutes">0</span>
+                    <span class="countdown-label">นาที</span>
+                </div>
+
+                <div class="countdown-box">
+                    <span class="countdown-number" id="seconds">0</span>
+                    <span class="countdown-label">วินาที</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- กล่องของขวัญ -->
+
         <div class="gift" id="gift" onclick="openGift()">
 
             <div class="bow-left"></div>
@@ -327,6 +439,7 @@ body {
             <div class="box"></div>
 
         </div>
+
 
         <button class="main-btn" onclick="openGift()">
             🎁 เปิดของขวัญ
@@ -425,6 +538,87 @@ const correctPassword = "1404";
 
 
 /* =================================
+   ตั้งวันและเวลานับถอยหลัง
+================================= */
+
+/*
+   14 กันยายน 2026
+   เวลา 18:00 น.
+   ประเทศไทย (UTC+7)
+*/
+
+const surpriseDate =
+    new Date("2026-09-14T18:00:00+07:00").getTime();
+
+
+/* =================================
+   ระบบ COUNTDOWN
+================================= */
+
+function updateCountdown() {
+
+    const now = new Date().getTime();
+
+    const distance = surpriseDate - now;
+
+
+    // ถ้าถึงเวลาแล้ว
+
+    if (distance <= 0) {
+
+        document.getElementById("days").textContent = "0";
+        document.getElementById("hours").textContent = "0";
+        document.getElementById("minutes").textContent = "0";
+        document.getElementById("seconds").textContent = "0";
+
+        document.querySelector(".countdown-title").textContent =
+            "🎉 ถึงวันพิเศษของเราแล้ว! 🎉";
+
+        return;
+    }
+
+
+    // คำนวณเวลา
+
+    const days =
+        Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    const hours =
+        Math.floor(
+            (distance % (1000 * 60 * 60 * 24))
+            / (1000 * 60 * 60)
+        );
+
+    const minutes =
+        Math.floor(
+            (distance % (1000 * 60 * 60))
+            / (1000 * 60)
+        );
+
+    const seconds =
+        Math.floor(
+            (distance % (1000 * 60))
+            / 1000
+        );
+
+
+    // แสดงผล
+
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+}
+
+
+/* เริ่ม Countdown */
+
+updateCountdown();
+
+setInterval(updateCountdown, 1000);
+
+
+/* =================================
    เปิดกล่องของขวัญ
 ================================= */
 
@@ -434,7 +628,9 @@ function openGift() {
 
     gift.classList.add("open");
 
+
     // รอ animation ก่อนเปลี่ยนหน้า
+
     setTimeout(() => {
 
         document.getElementById("startScreen")
@@ -469,6 +665,7 @@ function checkPassword() {
 
         error.textContent = "🎉 ถูกต้อง!";
 
+
         setTimeout(() => {
 
             document.getElementById("passwordScreen")
@@ -484,12 +681,15 @@ function checkPassword() {
         error.textContent =
             "❌ รหัสไม่ถูกนะ ลองใหม่อีกครั้ง 💕";
 
+
         card.classList.remove("shake");
 
         // ทำให้ animation เล่นซ้ำ
+
         void card.offsetWidth;
 
         card.classList.add("shake");
+
 
         document.getElementById("passwordInput").value = "";
 
@@ -505,7 +705,9 @@ document.getElementById("passwordInput")
     .addEventListener("keydown", function(event) {
 
         if (event.key === "Enter") {
+
             checkPassword();
+
         }
 
     });
