@@ -1295,125 +1295,284 @@ document.getElementById(
 function openPage(page) {
 
     const title =
-        document.getElementById(
-            "pageTitle"
-        );
+        document.getElementById("pageTitle");
 
     const text =
-        document.getElementById(
-            "pageText"
-        );
+        document.getElementById("pageText");
 
 
-    /* จดหมาย */
+    /* =========================
+       จดหมาย
+    ========================= */
 
     if (page === "letter") {
-    title.textContent = "จดหมายถึงเธอ 💌";
 
-    text.innerHTML = `
-        เค้าอาจจะไม่ใช่คนที่พูดเก่งที่สุด
-        แสดงความรู้สึกไม่เก่ง
-        ทำตัวให้เธอปวดหัวอยู่บ่อยๆ
-        แต่เค้าอยากจะบอกเธอว่า
+        title.textContent =
+            "จดหมายถึงเธอ 💌";
 
-        <br><br>
+        text.innerHTML = `
+            เค้าอาจจะไม่ใช่คนที่พูดเก่งที่สุด
+            แสดงความรู้สึกไม่เก่ง
+            ทำตัวให้เธอปวดหัวอยู่บ่อยๆ
+            แต่เค้าอยากจะบอกเธอว่า
 
-        ขอบคุณนะที่เธอเข้ามาเป็นส่วนหนึ่งในชีวิตของเค้า
-        ขอบคุณสำหรับทุกช่วงเวลาที่เราได้อยู่ด้วยกัน
-        ไม่ว่าจะเป็นวันที่มีความสุข วันที่หัวเราะด้วยกัน
-        หรือแม้แต่วันที่เราไม่เข้าใจกัน
-        และขอบคุณที่ยอมรับและอดทนกับเค้าได้ขนาดนี้
+            <br><br>
 
-        <br><br>
+            ขอบคุณนะที่เธอเข้ามาเป็นส่วนหนึ่งในชีวิตของเค้า
+            ขอบคุณสำหรับทุกช่วงเวลาที่เราได้อยู่ด้วยกัน
+            ไม่ว่าจะเป็นวันที่มีความสุข วันที่หัวเราะด้วยกัน
+            หรือแม้แต่วันที่เราไม่เข้าใจกัน
+            และขอบคุณที่ยอมรับและอดทนกับเค้าได้ขนาดนี้
 
-        สำหรับเค้า
-        ทุกช่วงเวลาที่มีเธอ
-        คือความทรงจำที่มีความหมายที่สุดและดีที่สุด 💕
+            <br><br>
 
-        <br><br>
+            สำหรับเค้า
+            ทุกช่วงเวลาที่มีเธอ
+            คือความทรงจำที่มีความหมายที่สุดและดีที่สุด 💕
 
-        เค้าไม่รู้ว่าอนาคตจะเป็นยังไง
-        แต่ในวันนี้เค้าอยากให้เธอรู้ว่า
-        เค้าโชคดีจริง ๆ
-        โชคดีมาก ๆ ที่มีเธออยู่ข้าง ๆ เค้าแบบนี้ 🥺
+            <br><br>
 
-        <br><br>
+            เค้าไม่รู้ว่าอนาคตจะเป็นยังไง
+            แต่ในวันนี้เค้าอยากให้เธอรู้ว่า
+            เค้าโชคดีจริง ๆ
+            โชคดีมาก ๆ ที่มีเธออยู่ข้าง ๆ เค้าแบบนี้ 🥺
 
-        ขอให้เธอมีความสุขมาก ๆ
-        และไม่ว่าจะเกิดอะไรขึ้น
-        อย่าลืมว่ามีคนคนหนึ่งที่รักเธอมาก
-        และจะรักแบบนี้ไปเรื่อย ๆ
-        จนกว่าจะถึงวันที่เราจะได้ใช้ชีวิตด้วยกัน 🩷🤍
-    `;
-  }
-       
+            <br><br>
 
-    /* เรื่องราว */
+            ขอให้เธอมีความสุขมาก ๆ
+            และไม่ว่าจะเกิดอะไรขึ้น
+            อย่าลืมว่ามีคนคนหนึ่งที่รักเธอมาก
+            และจะรักแบบนี้ไปเรื่อย ๆ
+            จนกว่าจะถึงวันที่เราจะได้ใช้ชีวิตด้วยกัน 🩷🤍
+        `;
+    }
+
+
+    /* =========================
+       เรื่องราว
+    ========================= */
 
     else if (page === "story") {
-    title.textContent = "เรื่องราวของเรา 📖";
 
-    text.innerHTML = `
-        <div class="timeline">
+        title.textContent =
+            "เรื่องราวของเรา 📖";
 
-            <div class="timeline-item" onclick="showStory(1)">
-                <div class="timeline-dot">🌱</div>
-                <div class="timeline-box">
-                    <h3>วันที่เราได้รู้จักกัน</h3>
-                    <p>จุดเริ่มต้นของเรื่องราวของเรา</p>
+        text.innerHTML = `
+            <div class="timeline">
+
+                <div class="timeline-item"
+                     onclick="showStory(1)">
+
+                    <div class="timeline-dot">
+                        🌱
+                    </div>
+
+                    <div class="timeline-box">
+
+                        <h3>
+                            วันที่เราได้รู้จักกัน
+                        </h3>
+
+                        <p>
+                            จุดเริ่มต้นของเรื่องราวของเรา
+                        </p>
+
+                    </div>
                 </div>
-            </div>
 
-            <div class="timeline-item" onclick="showStory(2)">
-                <div class="timeline-dot">💕</div>
-                <div class="timeline-box">
-                    <h3>วันที่เราเริ่มสนิทกัน</h3>
-                    <p>จากคนธรรมดา กลายเป็นคนพิเศษ</p>
+
+                <div class="timeline-item"
+                     onclick="showStory(2)">
+
+                    <div class="timeline-dot">
+                        💕
+                    </div>
+
+                    <div class="timeline-box">
+
+                        <h3>
+                            วันที่เราเริ่มสนิทกัน
+                        </h3>
+
+                        <p>
+                            จากคนธรรมดา กลายเป็นคนพิเศษ
+                        </p>
+
+                    </div>
                 </div>
-            </div>
 
-            <div class="timeline-item" onclick="showStory(3)">
-                <div class="timeline-dot">🥰</div>
-                <div class="timeline-box">
-                    <h3>วันที่เราเริ่มมีความรู้สึกดี ๆ</h3>
-                    <p>ความสัมพันธ์ที่ค่อย ๆ เติบโตขึ้น</p>
+
+                <div class="timeline-item"
+                     onclick="showStory(3)">
+
+                    <div class="timeline-dot">
+                        🥰
+                    </div>
+
+                    <div class="timeline-box">
+
+                        <h3>
+                            วันที่เราเริ่มมีความรู้สึกดี ๆ
+                        </h3>
+
+                        <p>
+                            ความสัมพันธ์ที่ค่อย ๆ เติบโตขึ้น
+                        </p>
+
+                    </div>
                 </div>
-            </div>
 
-            <div class="timeline-item" onclick="showStory(4)">
-                <div class="timeline-dot">❤️</div>
-                <div class="timeline-box">
-                    <h3>วันที่เธอกลายเป็นคนสำคัญ</h3>
-                    <p>วันที่เค้ารู้ว่าไม่อยากเสียเธอไป</p>
+
+                <div class="timeline-item"
+                     onclick="showStory(4)">
+
+                    <div class="timeline-dot">
+                        ❤️
+                    </div>
+
+                    <div class="timeline-box">
+
+                        <h3>
+                            วันที่เธอกลายเป็นคนสำคัญ
+                        </h3>
+
+                        <p>
+                            วันที่เค้ารู้ว่าไม่อยากเสียเธอไป
+                        </p>
+
+                    </div>
                 </div>
-            </div>
 
-            <div class="timeline-item" onclick="showStory(5)">
-                <div class="timeline-dot">📸</div>
-                <div class="timeline-box">
-                    <h3>ความทรงจำของเรา</h3>
-                    <p>ช่วงเวลาต่าง ๆ ที่เค้าอยากเก็บเอาไว้</p>
+
+                <div class="timeline-item"
+                     onclick="showStory(5)">
+
+                    <div class="timeline-dot">
+                        📸
+                    </div>
+
+                    <div class="timeline-box">
+
+                        <h3>
+                            ความทรงจำของเรา
+                        </h3>
+
+                        <p>
+                            ช่วงเวลาต่าง ๆ ที่เค้าอยากเก็บเอาไว้
+                        </p>
+
+                    </div>
                 </div>
-            </div>
 
-            <div class="timeline-item" onclick="showStory(6)">
-                <div class="timeline-dot">🏡</div>
-                <div class="timeline-box">
-                    <h3>เรื่องราวต่อจากนี้...</h3>
-                    <p>หน้าต่อไปของเรื่องราวของเรา</p>
+
+                <div class="timeline-item"
+                     onclick="showStory(6)">
+
+                    <div class="timeline-dot">
+                        🏡
+                    </div>
+
+                    <div class="timeline-box">
+
+                        <h3>
+                            เรื่องราวต่อจากนี้...
+                        </h3>
+
+                        <p>
+                            หน้าต่อไปของเรื่องราวของเรา
+                        </p>
+
+                    </div>
                 </div>
-            </div>
 
-        </div>
-    `;
+            </div>
+        `;
+    }
+
+
+    /* =========================
+       เกม
+    ========================= */
+
+    else if (page === "game") {
+
+        title.textContent =
+            "🎮 เกมของเรา";
+
+        text.innerHTML = `
+            <div class="game-card">
+
+                <h2>
+                    💕 เกมทายใจเค้า
+                </h2>
+
+                <p>
+                    มาดูกันว่าเธอรู้จักเค้ามากแค่ไหนนะ 😆
+                </p>
+
+                <button
+                    class="main-btn"
+                    onclick="startGame()">
+
+                    🎮 เริ่มเกม
+
+                </button>
+
+            </div>
+        `;
+    }
+
+
+    /* =========================
+       ความทรงจำ
+    ========================= */
+
+    else if (page === "memory") {
+
+        title.textContent =
+            "ความทรงจำ 📸";
+
+        text.innerHTML = `
+            รูปภาพและความทรงจำดี ๆ
+            ของเราจะอยู่ที่นี่ 📸💕
+        `;
+    }
+
+
+    /* =========================
+       เปลี่ยนหน้า
+    ========================= */
+
+    document.getElementById(
+        "menuScreen"
+    ).classList.remove("active");
+
+
+    document.getElementById(
+        "pageScreen"
+    ).classList.add("active");
+
 }
+
+
+
+/* =================================
+   ระบบเรื่องราว
+================================= */
+
 function showStory(number) {
 
-    const title = document.getElementById("pageTitle");
-    const text = document.getElementById("pageText");
+    const title =
+        document.getElementById("pageTitle");
+
+    const text =
+        document.getElementById("pageText");
+
 
     if (number === 1) {
-        title.textContent = "🌱 จุดเริ่มต้น";
+
+        title.textContent =
+            "🌱 จุดเริ่มต้น";
 
         text.innerHTML = `
             วันนั้นเค้าอาจจะยังไม่รู้เลยว่า
@@ -1428,8 +1587,11 @@ function showStory(number) {
         `;
     }
 
+
     else if (number === 2) {
-        title.textContent = "💕 วันที่เราเริ่มสนิทกัน";
+
+        title.textContent =
+            "💕 วันที่เราเริ่มสนิทกัน";
 
         text.innerHTML = `
             จากคนที่เคยเป็นแค่คนธรรมดา
@@ -1444,8 +1606,11 @@ function showStory(number) {
         `;
     }
 
+
     else if (number === 3) {
-        title.textContent = "🥰 ความรู้สึกที่ค่อย ๆ เติบโต";
+
+        title.textContent =
+            "🥰 ความรู้สึกที่ค่อย ๆ เติบโต";
 
         text.innerHTML = `
             ความรู้สึกของเราอาจไม่ได้เกิดขึ้น
@@ -1465,15 +1630,20 @@ function showStory(number) {
         `;
     }
 
+
     else if (number === 4) {
-        title.textContent = "❤️ คนสำคัญ";
+
+        title.textContent =
+            "❤️ คนสำคัญ";
 
         text.innerHTML = `
             แล้วก็มีวันหนึ่งที่เค้ารู้ว่า
 
             <br><br>
 
-            <strong>เธอไม่ได้เป็นแค่คนที่เค้ารัก</strong>
+            <strong>
+                เธอไม่ได้เป็นแค่คนที่เค้ารัก
+            </strong>
 
             <br><br>
 
@@ -1488,8 +1658,11 @@ function showStory(number) {
         `;
     }
 
+
     else if (number === 5) {
-        title.textContent = "📸 ความทรงจำของเรา";
+
+        title.textContent =
+            "📸 ความทรงจำของเรา";
 
         text.innerHTML = `
             ทุกช่วงเวลาที่เราได้อยู่ด้วยกัน
@@ -1515,8 +1688,11 @@ function showStory(number) {
         `;
     }
 
+
     else if (number === 6) {
-        title.textContent = "🏡 เรื่องราวต่อจากนี้...";
+
+        title.textContent =
+            "🏡 เรื่องราวต่อจากนี้...";
 
         text.innerHTML = `
             เค้าไม่รู้หรอกว่าอนาคตของเรา
@@ -1547,45 +1723,251 @@ function showStory(number) {
             </strong>
         `;
     }
+
 }
 
-    /* เกม */
 
-    else if (page === "game") {
 
-        title.textContent =
-            "เกมของเรา";
+/* =================================
+   ระบบเกม
+================================= */
 
-        text.innerHTML =
-            "เตรียมตัวไว้เลย! เกมของเรากำลังจะมา 😆💗";
+let currentQuestion = 0;
+
+let score = 0;
+
+
+const questions = [
+
+    {
+        question:
+            "สิ่งที่เค้าชอบที่สุดเวลาได้อยู่กับเธอคืออะไร? 💕",
+
+        answers: [
+            "ได้นั่งเล่นโทรศัพท์",
+            "ได้อยู่ข้าง ๆ เธอ",
+            "ได้นอน",
+            "ได้เล่นเกม"
+        ],
+
+        correct: 1
+    },
+
+
+    {
+        question:
+            "ถ้าเค้างอน สิ่งที่เค้าต้องการมากที่สุดคืออะไร? 🥺",
+
+        answers: [
+            "ให้เธอปล่อยไว้",
+            "ให้เธอซื้อของให้",
+            "ให้เธอมาง้อ",
+            "ให้เธอไปนอน"
+        ],
+
+        correct: 2
+    },
+
+
+    {
+        question:
+            "สิ่งหนึ่งที่เค้าอยากทำกับเธอในอนาคตคืออะไร? 🩷",
+
+        answers: [
+            "ไปเที่ยวด้วยกัน",
+            "ไม่เจอกันเลย",
+            "แข่งเกมกันทุกวัน",
+            "อยู่คนเดียว"
+        ],
+
+        correct: 0
+    },
+
+
+    {
+        question:
+            "สำหรับเค้า เธอเป็นอะไร? ❤️",
+
+        answers: [
+            "เพื่อนธรรมดา",
+            "คนที่บังเอิญรู้จัก",
+            "คนสำคัญ",
+            "คู่แข่ง"
+        ],
+
+        correct: 2
+    },
+
+
+    {
+        question:
+            "ถ้าเลือกได้ เค้าอยากให้เรื่องราวของเราเป็นยังไง? 🥺",
+
+        answers: [
+            "จบลงตรงนี้",
+            "ไม่ต้องเจอกันอีก",
+            "อยากเขียนเรื่องราวต่อไปกับเธอ",
+            "ไม่รู้เหมือนกัน"
+        ],
+
+        correct: 2
+    }
+
+];
+
+
+function startGame() {
+
+    currentQuestion = 0;
+
+    score = 0;
+
+    showQuestion();
+
+}
+
+
+function showQuestion() {
+
+    const title =
+        document.getElementById("pageTitle");
+
+    const text =
+        document.getElementById("pageText");
+
+
+    const q =
+        questions[currentQuestion];
+
+
+    title.textContent =
+        "🎮 ข้อ " +
+        (currentQuestion + 1) +
+        " / " +
+        questions.length;
+
+
+    let html = `
+        <div class="game-card">
+
+            <h2>
+                ${q.question}
+            </h2>
+
+            <div class="answers">
+    `;
+
+
+    q.answers.forEach(
+        (answer, index) => {
+
+            html += `
+                <button
+                    class="answer-btn"
+                    onclick="answerQuestion(${index})">
+
+                    ${answer}
+
+                </button>
+            `;
+
+        }
+    );
+
+
+    html += `
+            </div>
+
+        </div>
+    `;
+
+
+    text.innerHTML = html;
+
+}
+
+
+function answerQuestion(answer) {
+
+    if (
+        answer ===
+        questions[currentQuestion].correct
+    ) {
+
+        score++;
 
     }
 
 
-    /* ความทรงจำ */
+    currentQuestion++;
 
-    else if (page === "memory") {
 
-        title.textContent =
-            "ความทรงจำ";
+    if (
+        currentQuestion <
+        questions.length
+    ) {
 
-        text.innerHTML =
-            "รูปภาพและความทรงจำดี ๆ ของเราจะอยู่ที่นี่ 📸💕";
+        showQuestion();
+
+    } else {
+
+        finishGame();
 
     }
 
-
-    /* เปลี่ยนหน้า */
-
-    document.getElementById(
-        "menuScreen"
-    ).classList.remove("active");
+}
 
 
-    document.getElementById(
-        "pageScreen"
-    ).classList.add("active");
+function finishGame() {
 
+    const title =
+        document.getElementById("pageTitle");
+
+    const text =
+        document.getElementById("pageText");
+
+
+    title.textContent =
+        "🎉 จบเกมแล้ว!";
+
+
+    text.innerHTML = `
+        <div class="game-card">
+
+            <h2>
+                เก่งมากเลย! 🥺💕
+            </h2>
+
+            <p>
+                เธอตอบถูก ${score} / ${questions.length} ข้อ
+            </p>
+
+            <br>
+
+            <p>
+                ไม่ว่าคะแนนจะเป็นเท่าไหร่
+                สำหรับเค้า เธอก็ยังเป็นคนที่พิเศษที่สุดอยู่ดี 🩷
+            </p>
+
+            <br>
+
+            <strong>
+                ขอบคุณที่เข้ามาเป็นส่วนหนึ่ง
+                ในเรื่องราวของเค้านะ ❤️
+            </strong>
+
+            <br><br>
+
+            <button
+                class="main-btn"
+                onclick="backToMenu()">
+
+                💕 กลับไปหน้าเมนู
+
+            </button>
+
+        </div>
+    `;
 }
 
 
@@ -1594,6 +1976,18 @@ function showStory(number) {
    กลับหน้าเมนู
 ================================= */
 
+function backToMenu() {
+
+    document.getElementById(
+        "pageScreen"
+    ).classList.remove("active");
+
+
+    document.getElementById(
+        "menuScreen"
+    ).classList.add("active");
+
+}
 function backToMenu() {
 
     document.getElementById(
