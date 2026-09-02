@@ -736,6 +736,284 @@ body {
 .answer-btn:active {
     transform: scale(0.97);
 }
+   /* =========================
+   อัลบั้มความทรงจำ
+========================= */
+
+.memory-card {
+    text-align: center;
+    padding: 5px;
+}
+
+.memory-card h2 {
+    color: #d96b9a;
+    margin-bottom: 8px;
+}
+
+.memory-subtitle {
+    color: #777;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+
+/* กล่องรูปทั้งหมด */
+
+.memory-album {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+
+/* การ์ดรูป */
+
+.memory-item {
+    background: white;
+    padding: 10px;
+    border-radius: 20px;
+
+    box-shadow:
+        0 6px 18px rgba(100,60,100,0.12);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease;
+}
+
+.memory-item:active {
+    transform: scale(0.97);
+}
+
+
+/* รูป */
+
+.memory-item img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    border-radius: 15px;
+
+    object-fit: cover;
+}
+
+
+/* ข้อความใต้รูป */
+
+.memory-caption {
+    padding: 12px 5px 5px;
+
+    color: #5a4050;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+}
+
+.memory-date {
+    color: #d96b9a;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 4px;
+}
+
+
+/* =========================
+   รูปขยายเต็มจอ
+========================= */
+
+.memory-modal {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(40,20,40,0.88);
+
+    z-index: 999;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease;
+}
+
+.memory-modal.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* กล่องด้านใน */
+
+.memory-modal-content {
+    width: 100%;
+
+    max-width: 600px;
+
+    max-height: 90vh;
+
+    text-align: center;
+
+    position: relative;
+
+    animation:
+        memoryZoom 0.3s ease;
+}
+
+
+/* รูปใหญ่ */
+
+.memory-modal-image {
+    max-width: 100%;
+
+    max-height: 65vh;
+
+    object-fit: contain;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.35);
+}
+
+
+/* คำบรรยาย */
+
+.memory-modal-caption {
+    color: white;
+
+    margin-top: 15px;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+}
+
+
+/* ปุ่มปิด */
+
+.memory-close {
+    position: absolute;
+
+    top: -12px;
+
+    right: -5px;
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #d96b9a;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.2);
+
+    z-index: 5;
+}
+
+
+/* ปุ่มซ้ายขวา */
+
+.memory-nav {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 15px;
+}
+
+.memory-nav button {
+    border: none;
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #d96b9a;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.2);
+}
+
+.memory-nav button:active {
+    transform: scale(0.92);
+}
+
+
+@keyframes memoryZoom {
+
+    from {
+        opacity: 0;
+
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+
+}
+
+
+/* มือถือ */
+
+@media (max-width: 500px) {
+
+    .memory-modal {
+        padding: 15px;
+    }
+
+    .memory-modal-image {
+        max-height: 60vh;
+    }
+
+    .memory-modal-caption {
+        font-size: 14px;
+    }
+
+}
    
 </style>
 </head>
@@ -1059,7 +1337,69 @@ body {
     </div>
 
 </section>
+<!-- =================================
+     หน้าต่างรูปความทรงจำ
+================================= -->
 
+<div
+    class="memory-modal"
+    id="memoryModal"
+>
+
+    <div class="memory-modal-content">
+
+
+        <!-- ปุ่มปิด -->
+
+        <button
+            class="memory-close"
+            onclick="closeMemory()"
+        >
+            ✕
+        </button>
+
+
+        <!-- รูป -->
+
+        <img
+            id="memoryModalImage"
+            class="memory-modal-image"
+            src=""
+            alt="ความทรงจำ"
+        >
+
+
+        <!-- คำบรรยาย -->
+
+        <div
+            id="memoryModalCaption"
+            class="memory-modal-caption"
+        >
+        </div>
+
+
+        <!-- ปุ่มเลื่อน -->
+
+        <div class="memory-nav">
+
+            <button
+                onclick="previousMemory()"
+            >
+                ◀
+            </button>
+
+
+            <button
+                onclick="nextMemory()"
+            >
+                ▶
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
 
 
 <script>
@@ -1571,14 +1911,178 @@ function openPage(page) {
 
     else if (page === "memory") {
 
-        title.textContent =
-            "ความทรงจำ 📸";
+    title.textContent =
+        "📸 ความทรงจำของเรา";
 
-        text.innerHTML = `
-            รูปภาพและความทรงจำดี ๆ
-            ของเราจะอยู่ที่นี่ 📸💕
-        `;
-    }
+    text.innerHTML = `
+
+        <div class="memory-card">
+
+            <h2>
+                💕 อัลบั้มของเรา
+            </h2>
+
+            <p class="memory-subtitle">
+                รูปบางรูปอาจเป็นเพียงภาพธรรมดา
+                <br>
+                แต่สำหรับเค้า...
+                ทุกภาพมีเรื่องราวของเราอยู่ในนั้น 🥺
+            </p>
+
+
+            <div class="memory-album">
+
+
+                <!-- =====================
+                     รูปที่ 1
+                ====================== -->
+
+                <div
+                    class="memory-item"
+                    onclick="openMemory(0)"
+                >
+
+                    <img
+                        src="photo1.jpg"
+                        alt="ความทรงจำที่ 1"
+                    >
+
+                    <div class="memory-caption">
+
+                        <div class="memory-date">
+                            💕 วันที่เราได้อยู่ด้วยกัน
+                        </div>
+
+                        รูปนี้อาจไม่ได้พิเศษสำหรับใคร
+                        แต่สำหรับเค้าแล้ว
+                        เป็นอีกหนึ่งช่วงเวลาที่อยากเก็บเอาไว้ 🤍
+
+                    </div>
+
+                </div>
+
+
+                <!-- =====================
+                     รูปที่ 2
+                ====================== -->
+
+                <div
+                    class="memory-item"
+                    onclick="openMemory(1)"
+                >
+
+                    <img
+                        src="photo2.jpg"
+                        alt="ความทรงจำที่ 2"
+                    >
+
+                    <div class="memory-caption">
+
+                        <div class="memory-date">
+                            🥰 ช่วงเวลาที่เค้าชอบ
+                        </div>
+
+                        แค่ได้อยู่ด้วยกัน
+                        ทำอะไรธรรมดา ๆ ด้วยกัน
+                        ก็กลายเป็นความทรงจำดี ๆ ได้แล้ว 💕
+
+                    </div>
+
+                </div>
+
+
+                <!-- =====================
+                     รูปที่ 3
+                ====================== -->
+
+                <div
+                    class="memory-item"
+                    onclick="openMemory(2)"
+                >
+
+                    <img
+                        src="photo3.jpg"
+                        alt="ความทรงจำที่ 3"
+                    >
+
+                    <div class="memory-caption">
+
+                        <div class="memory-date">
+                            📸 อีกหนึ่งความทรงจำ
+                        </div>
+
+                        ขอบคุณนะ
+                        ที่ทำให้วันธรรมดา ๆ
+                        ของเค้ามีความหมายมากขึ้น 🩷
+
+                    </div>
+
+                </div>
+
+
+                <!-- =====================
+                     รูปที่ 4
+                ====================== -->
+
+                <div
+                    class="memory-item"
+                    onclick="openMemory(3)"
+                >
+
+                    <img
+                        src="photo4.jpg"
+                        alt="ความทรงจำที่ 4"
+                    >
+
+                    <div class="memory-caption">
+
+                        <div class="memory-date">
+                            ❤️ ช่วงเวลาของเรา
+                        </div>
+
+                        เค้าอยากเก็บช่วงเวลาแบบนี้
+                        เอาไว้ให้นานที่สุดเลย
+
+                    </div>
+
+                </div>
+
+
+                <!-- =====================
+                     รูปที่ 5
+                ====================== -->
+
+                <div
+                    class="memory-item"
+                    onclick="openMemory(4)"
+                >
+
+                    <img
+                        src="photo5.jpg"
+                        alt="ความทรงจำที่ 5"
+                    >
+
+                    <div class="memory-caption">
+
+                        <div class="memory-date">
+                            🥺 รูปที่เค้าอยากเก็บไว้
+                        </div>
+
+                        และหวังว่าในอนาคต
+                        อัลบั้มนี้จะมีรูปของเรา
+                        เพิ่มขึ้นอีกเยอะ ๆ เลย 💕
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    `;
+}
 
 
     /* =========================
@@ -2011,7 +2515,120 @@ function finishGame() {
         </div>
     `;
 }
+/* =================================
+   ระบบอัลบั้มความทรงจำ
+================================= */
 
+const memories = [
+
+    {
+        image: "photo1.jpg",
+        caption:
+            "💕 วันที่เราได้อยู่ด้วยกัน — อีกหนึ่งช่วงเวลาที่เค้าอยากเก็บเอาไว้ 🤍"
+    },
+
+    {
+        image: "photo2.jpg",
+        caption:
+            "🥰 ช่วงเวลาธรรมดา ๆ ที่มีเธออยู่ด้วย ก็กลายเป็นช่วงเวลาพิเศษแล้ว"
+    },
+
+    {
+        image: "photo3.jpg",
+        caption:
+            "📸 ขอบคุณนะ ที่ทำให้วันธรรมดา ๆ ของเค้ามีความหมายมากขึ้น 🩷"
+    },
+
+    {
+        image: "photo4.jpg",
+        caption:
+            "❤️ อีกหนึ่งความทรงจำที่เค้าอยากเก็บเอาไว้ให้นานที่สุด"
+    },
+
+    {
+        image: "photo5.jpg",
+        caption:
+            "🥺 และหวังว่าในอนาคต อัลบั้มนี้จะมีรูปของเราเพิ่มขึ้นอีกเยอะ ๆ เลย 💕"
+    }
+
+];
+
+
+let currentMemory = 0;
+
+
+function openMemory(number) {
+
+    currentMemory = number;
+
+    const modal =
+        document.getElementById("memoryModal");
+
+    modal.classList.add("active");
+
+    showMemory();
+
+}
+
+
+function showMemory() {
+
+    const image =
+        document.getElementById("memoryModalImage");
+
+    const caption =
+        document.getElementById("memoryModalCaption");
+
+    image.src =
+        memories[currentMemory].image;
+
+    caption.textContent =
+        memories[currentMemory].caption;
+
+}
+
+
+function nextMemory() {
+
+    currentMemory++;
+
+    if (
+        currentMemory >=
+        memories.length
+    ) {
+
+        currentMemory = 0;
+
+    }
+
+    showMemory();
+
+}
+
+
+function previousMemory() {
+
+    currentMemory--;
+
+    if (currentMemory < 0) {
+
+        currentMemory =
+            memories.length - 1;
+
+    }
+
+    showMemory();
+
+}
+
+
+function closeMemory() {
+
+    document
+        .getElementById("memoryModal")
+        .classList.remove("active");
+
+}
 
 
 /* =================================
