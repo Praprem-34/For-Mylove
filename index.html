@@ -1578,6 +1578,15 @@ const correctPassword = "1404";
    ตัวแปรระบบหน้า
 ================================= */
 
+/*
+    pageMode ใช้บอกว่า
+    ตอนนี้หน้า pageScreen
+    ถูกเปิดมาจากส่วนไหน
+
+    "menu"  = มาจากเมนูหลัก
+    "story" = มาจากเรื่องราว
+*/
+
 let pageMode = "menu";
 
 
@@ -1847,6 +1856,11 @@ function openPage(page) {
         );
 
 
+    /*
+       ทุกครั้งที่เปิดจากเมนูหลัก
+       ให้กำหนด pageMode = menu
+    */
+
     pageMode = "menu";
 
 
@@ -2026,8 +2040,6 @@ function openPage(page) {
                 <div class="memory-album">
 
 
-                    <!-- รูปที่ 1 -->
-
                     <div
                         class="memory-item"
                         onclick="openMemory(0)">
@@ -2051,8 +2063,6 @@ function openPage(page) {
                     </div>
 
 
-
-                    <!-- รูปที่ 2 -->
 
                     <div
                         class="memory-item"
@@ -2078,8 +2088,6 @@ function openPage(page) {
 
 
 
-                    <!-- รูปที่ 3 -->
-
                     <div
                         class="memory-item"
                         onclick="openMemory(2)">
@@ -2104,8 +2112,6 @@ function openPage(page) {
 
 
 
-                    <!-- รูปที่ 4 -->
-
                     <div
                         class="memory-item"
                         onclick="openMemory(3)">
@@ -2128,8 +2134,6 @@ function openPage(page) {
                     </div>
 
 
-
-                    <!-- รูปที่ 5 -->
 
                     <div
                         class="memory-item"
@@ -2393,6 +2397,13 @@ function showStory(number) {
         );
 
 
+    /*
+       สำคัญมาก
+
+       เมื่อเข้ามาจาก Timeline
+       ให้จำไว้ว่าเราต้องกลับไป Timeline
+    */
+
     pageMode = "story";
 
 
@@ -2620,6 +2631,14 @@ function showStory(number) {
     }
 
 
+    /*
+       เปลี่ยนปุ่มกลับ
+
+       เพราะ showStory()
+       ถูกเรียกจาก Timeline
+       ดังนั้นปุ่มต้องกลับ Timeline
+    */
+
     backButton.textContent =
         "💕 กลับไปเรื่องราว";
 
@@ -2633,10 +2652,18 @@ function showStory(number) {
 
 function backToStory() {
 
+    /*
+       เปลี่ยน icon
+    */
+
     document.getElementById(
         "pageIcon"
     ).textContent = "📖";
 
+
+    /*
+       เปลี่ยนหัวข้อ
+    */
 
     document.getElementById(
         "pageTitle"
@@ -2644,11 +2671,24 @@ function backToStory() {
         "เรื่องราวของเรา 📖";
 
 
+    /*
+       สร้าง Timeline ใหม่
+    */
+
     showStoryTimeline();
 
 
+    /*
+       ยังคงอยู่ใน pageScreen
+       ไม่ต้องเปิด menuScreen
+    */
+
     pageMode = "story";
 
+
+    /*
+       เปลี่ยนข้อความปุ่ม
+    */
 
     document.getElementById(
         "pageBackButton"
@@ -2840,6 +2880,11 @@ function showQuestion() {
     text.innerHTML = html;
 
 
+    /*
+       เกมยังถือว่าเปิดจากเมนู
+       ดังนั้นปุ่มกลับยังกลับเมนู
+    */
+
     pageMode = "menu";
 
     backButton.textContent =
@@ -2978,7 +3023,6 @@ const memories = [
         caption:
             "📸 ขอบคุณนะ ที่ทำให้วันธรรมดา ๆ ของเค้ามีความหมายมากขึ้น 🩷"
     },
-
 
     {
         image: "IMG_0679.jpeg",
