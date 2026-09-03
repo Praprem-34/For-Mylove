@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>ถึงคนพิเศษของเค้า 💕</title>
 
@@ -20,9 +24,18 @@
 
 body {
     font-family: "Segoe UI", sans-serif;
+
     min-height: 100vh;
+
     overflow: hidden;
-    background: linear-gradient(135deg, #ffd6e7, #e6d6ff);
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd6e7,
+            #e6d6ff
+        );
+
     color: #5a4050;
 }
 
@@ -33,20 +46,28 @@ body {
 
 .screen {
     position: fixed;
+
     inset: 0;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
     padding: 25px;
 
     opacity: 0;
+
     visibility: hidden;
 
-    transition: opacity 0.6s ease;
+    transition:
+        opacity 0.6s ease;
 }
 
 .screen.active {
     opacity: 1;
+
     visibility: visible;
 }
 
@@ -57,17 +78,21 @@ body {
 
 .start-content {
     width: 100%;
+
     max-width: 500px;
+
     text-align: center;
 }
 
 .start-content h1 {
     font-size: 2.3rem;
+
     margin-bottom: 12px;
 }
 
 .start-content p {
     font-size: 1.1rem;
+
     margin-bottom: 25px;
 }
 
@@ -77,34 +102,44 @@ body {
 ========================= */
 
 .countdown {
-    background: rgba(255,255,255,0.75);
+    background:
+        rgba(255,255,255,0.75);
+
     padding: 18px;
+
     border-radius: 20px;
 
-    margin: 0 auto 25px;
+    margin:
+        0 auto 25px;
 
     box-shadow:
-        0 8px 25px rgba(100,60,100,0.12);
+        0 8px 25px
+        rgba(100,60,100,0.12);
 }
 
 .countdown-title {
     font-size: 1rem;
+
     margin-bottom: 12px;
+
     color: #7a5267;
 }
 
 .countdown-time {
     display: flex;
+
     justify-content: center;
+
     gap: 10px;
 }
 
 .countdown-box {
-    background: linear-gradient(
-        135deg,
-        #ff72a3,
-        #c88cff
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #ff72a3,
+            #c88cff
+        );
 
     color: white;
 
@@ -115,13 +150,15 @@ body {
     min-width: 65px;
 
     box-shadow:
-        0 5px 12px rgba(150,80,130,0.15);
+        0 5px 12px
+        rgba(150,80,130,0.15);
 }
 
 .countdown-number {
     display: block;
 
     font-size: 1.5rem;
+
     font-weight: bold;
 }
 
@@ -138,17 +175,21 @@ body {
     position: relative;
 
     width: 170px;
+
     height: 150px;
 
-    margin: 20px auto 40px;
+    margin:
+        20px auto 40px;
 
     cursor: pointer;
 
-    transition: transform 0.3s;
+    transition:
+        transform 0.3s;
 }
 
 .gift:hover {
-    transform: scale(1.05);
+    transform:
+        scale(1.05);
 }
 
 
@@ -160,6 +201,7 @@ body {
     bottom: 0;
 
     width: 170px;
+
     height: 115px;
 
     background: #ff8fb8;
@@ -167,7 +209,8 @@ body {
     border-radius: 8px;
 
     box-shadow:
-        0 15px 30px rgba(150,80,110,0.25);
+        0 15px 30px
+        rgba(150,80,110,0.25);
 }
 
 .box::before {
@@ -178,6 +221,7 @@ body {
     left: 65px;
 
     width: 40px;
+
     height: 115px;
 
     background: #ffd166;
@@ -190,9 +234,11 @@ body {
     position: absolute;
 
     top: 25px;
+
     left: -8px;
 
     width: 186px;
+
     height: 38px;
 
     background: #ff72a3;
@@ -213,6 +259,7 @@ body {
     left: 73px;
 
     width: 40px;
+
     height: 38px;
 
     background: #ffd166;
@@ -228,6 +275,7 @@ body {
     top: 0;
 
     width: 45px;
+
     height: 35px;
 
     background: #ffd166;
@@ -239,18 +287,23 @@ body {
 
 .bow-left {
     left: 45px;
-    transform: rotate(30deg);
+
+    transform:
+        rotate(30deg);
 }
 
 .bow-right {
     right: 45px;
-    transform: rotate(-30deg);
+
+    transform:
+        rotate(-30deg);
 }
 
 .bow-center {
     position: absolute;
 
     width: 22px;
+
     height: 22px;
 
     background: #ffbd35;
@@ -258,6 +311,7 @@ body {
     border-radius: 50%;
 
     top: 10px;
+
     left: 74px;
 
     z-index: 5;
@@ -280,15 +334,18 @@ body {
 @keyframes giftOpen {
 
     0% {
-        transform: scale(1);
+        transform:
+            scale(1);
     }
 
     50% {
-        transform: scale(1.15);
+        transform:
+            scale(1.15);
     }
 
     100% {
-        transform: scale(1);
+        transform:
+            scale(1);
     }
 
 }
@@ -301,7 +358,8 @@ body {
 .main-btn {
     border: none;
 
-    padding: 15px 35px;
+    padding:
+        15px 35px;
 
     border-radius: 50px;
 
@@ -310,40 +368,46 @@ body {
     color: white;
 
     font-size: 1.05rem;
+
     font-weight: bold;
 
     cursor: pointer;
 
     box-shadow:
-        0 8px 20px rgba(255,114,163,0.3);
+        0 8px 20px
+        rgba(255,114,163,0.3);
 
     transition: 0.3s;
 }
 
 .main-btn:hover {
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
 }
 
 
 /* =========================
-   หน้ารหัส
+   หน้ารหัสผ่าน
 ========================= */
 
 .password-card {
     width: 100%;
+
     max-width: 420px;
 
     background:
         rgba(255,255,255,0.9);
 
-    padding: 35px 25px;
+    padding:
+        35px 25px;
 
     border-radius: 25px;
 
     text-align: center;
 
     box-shadow:
-        0 20px 50px rgba(100,60,100,0.2);
+        0 20px 50px
+        rgba(100,60,100,0.2);
 }
 
 .password-card h2 {
@@ -378,7 +442,8 @@ body {
 }
 
 .password-input:focus {
-    border-color: #ff72a3;
+    border-color:
+        #ff72a3;
 }
 
 
@@ -403,15 +468,18 @@ body {
 @keyframes shake {
 
     0%,100% {
-        transform: translateX(0);
+        transform:
+            translateX(0);
     }
 
     25% {
-        transform: translateX(-10px);
+        transform:
+            translateX(-10px);
     }
 
     75% {
-        transform: translateX(10px);
+        transform:
+            translateX(10px);
     }
 
 }
@@ -442,6 +510,7 @@ body {
     gap: 15px;
 
     width: 100%;
+
     max-width: 400px;
 }
 
@@ -450,7 +519,8 @@ body {
 
     background: white;
 
-    padding: 30px 15px;
+    padding:
+        30px 15px;
 
     border-radius: 20px;
 
@@ -459,7 +529,8 @@ body {
     color: #5a4050;
 
     box-shadow:
-        0 8px 20px rgba(100,60,100,0.15);
+        0 8px 20px
+        rgba(100,60,100,0.15);
 
     cursor: pointer;
 
@@ -495,22 +566,26 @@ body {
 
 .letter-card {
     width: 100%;
+
     max-width: 500px;
 
     max-height: 90vh;
+
     overflow-y: auto;
 
     background:
         rgba(255,255,255,0.94);
 
-    padding: 35px 28px;
+    padding:
+        35px 28px;
 
     border-radius: 28px;
 
     text-align: left;
 
     box-shadow:
-        0 20px 50px rgba(100,60,100,0.2);
+        0 20px 50px
+        rgba(100,60,100,0.2);
 
     animation:
         letterAppear 0.6s ease;
@@ -537,7 +612,8 @@ body {
 
     border-radius: 18px;
 
-    padding: 25px 20px;
+    padding:
+        25px 20px;
 
     line-height: 1.9;
 
@@ -584,197 +660,239 @@ body {
 
 
 /* =========================
-   มือถือ
+   Timeline เรื่องราว
 ========================= */
 
-@media (max-width: 500px) {
-
-    .start-content h1 {
-        font-size: 1.8rem;
-    }
-
-    .countdown {
-        padding: 15px 10px;
-    }
-
-    .countdown-time {
-        gap: 6px;
-    }
-
-    .countdown-box {
-        min-width: 58px;
-
-        padding: 8px 5px;
-    }
-
-    .countdown-number {
-        font-size: 1.3rem;
-    }
-
-    .countdown-label {
-        font-size: 0.65rem;
-    }
-
-    .gift {
-        transform: scale(0.9);
-    }
-
-    .gift:hover {
-        transform: scale(0.95);
-    }
-
-}
 .timeline {
     position: relative;
-    margin: 25px auto;
-    padding: 10px 0;
+
+    margin:
+        25px auto;
+
+    padding:
+        10px 0;
+
     max-width: 500px;
 }
 
 .timeline::before {
     content: "";
+
     position: absolute;
+
     left: 30px;
+
     top: 10px;
+
     bottom: 10px;
+
     width: 3px;
+
     background: #f3b6d2;
+
     border-radius: 10px;
 }
 
 .timeline-item {
     position: relative;
+
     display: flex;
+
     align-items: center;
+
     margin: 22px 0;
+
     cursor: pointer;
-    transition: transform 0.2s ease;
+
+    transition:
+        transform 0.2s ease;
 }
 
 .timeline-item:hover {
-    transform: scale(1.02);
+    transform:
+        scale(1.02);
 }
 
 .timeline-dot {
     width: 60px;
+
     height: 60px;
+
     min-width: 60px;
+
     border-radius: 50%;
+
     background: white;
-    border: 3px solid #f3b6d2;
+
+    border:
+        3px solid #f3b6d2;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     font-size: 26px;
+
     z-index: 2;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+    box-shadow:
+        0 4px 12px
+        rgba(0,0,0,0.08);
 }
 
 .timeline-box {
     margin-left: 15px;
-    padding: 14px 18px;
-    background: rgba(255,255,255,0.9);
+
+    padding:
+        14px 18px;
+
+    background:
+        rgba(255,255,255,0.9);
+
     border-radius: 18px;
+
     flex: 1;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+    box-shadow:
+        0 4px 12px
+        rgba(0,0,0,0.08);
+
     text-align: left;
 }
 
 .timeline-box h3 {
-    margin: 0 0 5px;
+    margin:
+        0 0 5px;
+
     color: #d96b9a;
+
     font-size: 17px;
 }
 
 .timeline-box p {
     margin: 0;
+
     color: #777;
+
     font-size: 14px;
 }
 
 .timeline-item:active {
-    transform: scale(0.98);
+    transform:
+        scale(0.98);
 }
-   .game-card {
+
+
+/* =========================
+   เกม
+========================= */
+
+.game-card {
     text-align: center;
+
     padding: 10px;
 }
 
 .game-card h2 {
     color: #d96b9a;
+
     margin-bottom: 15px;
 }
 
 .game-card p {
     color: #777;
+
     line-height: 1.8;
 }
 
 .answers {
     display: flex;
+
     flex-direction: column;
+
     gap: 12px;
+
     margin-top: 25px;
 }
 
 .answer-btn {
     border: none;
-    padding: 14px 18px;
+
+    padding:
+        14px 18px;
+
     border-radius: 18px;
+
     background: white;
+
     color: #555;
+
     font-size: 16px;
+
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+    box-shadow:
+        0 4px 12px
+        rgba(0,0,0,0.08);
+
     transition: 0.2s;
 }
 
 .answer-btn:hover {
-    transform: scale(1.02);
+    transform:
+        scale(1.02);
 }
 
 .answer-btn:active {
-    transform: scale(0.97);
+    transform:
+        scale(0.97);
 }
-   /* =========================
+
+
+/* =========================
    อัลบั้มความทรงจำ
 ========================= */
 
 .memory-card {
     text-align: center;
+
     padding: 5px;
 }
 
 .memory-card h2 {
     color: #d96b9a;
+
     margin-bottom: 8px;
 }
 
 .memory-subtitle {
     color: #777;
+
     line-height: 1.7;
+
     margin-bottom: 20px;
 }
 
-
-/* กล่องรูปทั้งหมด */
-
 .memory-album {
     display: flex;
+
     flex-direction: column;
+
     gap: 18px;
 }
 
-
-/* การ์ดรูป */
-
 .memory-item {
     background: white;
+
     padding: 10px;
+
     border-radius: 20px;
 
     box-shadow:
-        0 6px 18px rgba(100,60,100,0.12);
+        0 6px 18px
+        rgba(100,60,100,0.12);
 
     cursor: pointer;
 
@@ -783,14 +901,13 @@ body {
 }
 
 .memory-item:active {
-    transform: scale(0.97);
+    transform:
+        scale(0.97);
 }
-
-
-/* รูป */
 
 .memory-item img {
     width: 100%;
+
     height: auto;
 
     display: block;
@@ -800,11 +917,9 @@ body {
     object-fit: cover;
 }
 
-
-/* ข้อความใต้รูป */
-
 .memory-caption {
-    padding: 12px 5px 5px;
+    padding:
+        12px 5px 5px;
 
     color: #5a4050;
 
@@ -860,9 +975,6 @@ body {
     visibility: visible;
 }
 
-
-/* กล่องด้านใน */
-
 .memory-modal-content {
     width: 100%;
 
@@ -878,9 +990,6 @@ body {
         memoryZoom 0.3s ease;
 }
 
-
-/* รูปใหญ่ */
-
 .memory-modal-image {
     max-width: 100%;
 
@@ -891,11 +1000,9 @@ body {
     border-radius: 18px;
 
     box-shadow:
-        0 15px 40px rgba(0,0,0,0.35);
+        0 15px 40px
+        rgba(0,0,0,0.35);
 }
-
-
-/* คำบรรยาย */
 
 .memory-modal-caption {
     color: white;
@@ -906,9 +1013,6 @@ body {
 
     font-size: 15px;
 }
-
-
-/* ปุ่มปิด */
 
 .memory-close {
     position: absolute;
@@ -936,13 +1040,11 @@ body {
     cursor: pointer;
 
     box-shadow:
-        0 5px 15px rgba(0,0,0,0.2);
+        0 5px 15px
+        rgba(0,0,0,0.2);
 
     z-index: 5;
 }
-
-
-/* ปุ่มซ้ายขวา */
 
 .memory-nav {
     display: flex;
@@ -972,34 +1074,86 @@ body {
     cursor: pointer;
 
     box-shadow:
-        0 5px 15px rgba(0,0,0,0.2);
+        0 5px 15px
+        rgba(0,0,0,0.2);
 }
 
 .memory-nav button:active {
-    transform: scale(0.92);
+    transform:
+        scale(0.92);
 }
-
 
 @keyframes memoryZoom {
 
     from {
         opacity: 0;
 
-        transform: scale(0.9);
+        transform:
+            scale(0.9);
     }
 
     to {
         opacity: 1;
 
-        transform: scale(1);
+        transform:
+            scale(1);
     }
 
 }
 
 
-/* มือถือ */
+/* =========================
+   ปุ่มกลับ
+========================= */
+
+.page-back-btn {
+    margin-top: 10px;
+}
+
+
+/* =========================
+   มือถือ
+========================= */
 
 @media (max-width: 500px) {
+
+    .start-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .countdown {
+        padding:
+            15px 10px;
+    }
+
+    .countdown-time {
+        gap: 6px;
+    }
+
+    .countdown-box {
+        min-width: 58px;
+
+        padding:
+            8px 5px;
+    }
+
+    .countdown-number {
+        font-size: 1.3rem;
+    }
+
+    .countdown-label {
+        font-size: 0.65rem;
+    }
+
+    .gift {
+        transform:
+            scale(0.9);
+    }
+
+    .gift:hover {
+        transform:
+            scale(0.95);
+    }
 
     .memory-modal {
         padding: 15px;
@@ -1014,19 +1168,21 @@ body {
     }
 
 }
-   
+
 </style>
+
 </head>
 
-
-<body>
+   <body>
 
 
 <!-- =================================
      หน้าแรก
 ================================= -->
 
-<section id="startScreen" class="screen active">
+<section
+    id="startScreen"
+    class="screen active">
 
     <div class="start-content">
 
@@ -1287,7 +1443,7 @@ body {
 
 
 <!-- =================================
-     หน้าจดหมาย
+     หน้าหลักของแต่ละหมวด
 ================================= -->
 
 <section
@@ -1297,13 +1453,19 @@ body {
     <div class="letter-card">
 
 
-        <div class="letter-icon">
+        <div
+            class="letter-icon"
+            id="pageIcon">
+
             💌
+
         </div>
 
 
         <h2 id="pageTitle">
+
             จดหมายถึงเธอ
+
         </h2>
 
 
@@ -1320,13 +1482,18 @@ body {
         </div>
 
 
-        <div class="letter-sign">
+        <div
+            class="letter-sign"
+            id="pageSign">
+
             จากหมูอ้วนของเธอ 💕
+
         </div>
 
 
         <button
-            class="main-btn"
+            class="main-btn page-back-btn"
+            id="pageBackButton"
             onclick="backToMenu()">
 
             💕 กลับไปหน้าเมนู
@@ -1337,62 +1504,57 @@ body {
     </div>
 
 </section>
+
+
+
 <!-- =================================
      หน้าต่างรูปความทรงจำ
 ================================= -->
 
 <div
     class="memory-modal"
-    id="memoryModal"
->
+    id="memoryModal">
 
     <div class="memory-modal-content">
 
 
-        <!-- ปุ่มปิด -->
-
         <button
             class="memory-close"
-            onclick="closeMemory()"
-        >
+            onclick="closeMemory()">
+
             ✕
+
         </button>
 
-
-        <!-- รูป -->
 
         <img
             id="memoryModalImage"
             class="memory-modal-image"
             src=""
-            alt="ความทรงจำ"
-        >
+            alt="ความทรงจำ">
 
-
-        <!-- คำบรรยาย -->
 
         <div
             id="memoryModalCaption"
-            class="memory-modal-caption"
-        >
+            class="memory-modal-caption">
         </div>
 
-
-        <!-- ปุ่มเลื่อน -->
 
         <div class="memory-nav">
 
             <button
-                onclick="previousMemory()"
-            >
+                onclick="previousMemory()">
+
                 ◀
+
             </button>
 
 
             <button
-                onclick="nextMemory()"
-            >
+                onclick="nextMemory()">
+
                 ▶
+
             </button>
 
         </div>
@@ -1401,8 +1563,8 @@ body {
 
 </div>
 
+      <script>
 
-<script>
 
 /* =================================
    ตั้งรหัสผ่าน
@@ -1412,20 +1574,29 @@ const correctPassword = "1404";
 
 
 /* =================================
-   ตั้งวันและเวลานับถอยหลัง
+   ตัวแปรระบบหน้า
 ================================= */
 
 /*
-   14 กันยายน 2026
-   เวลา 18:00 น.
-   ประเทศไทย (UTC+7)
+    pageMode ใช้บอกว่า
+    ตอนนี้หน้า pageScreen
+    ถูกเปิดมาจากส่วนไหน
+
+    "menu"  = มาจากเมนูหลัก
+    "story" = มาจากเรื่องราว
 */
+
+let pageMode = "menu";
+
+
+/* =================================
+   ตั้งวันและเวลานับถอยหลัง
+================================= */
 
 const surpriseDate =
     new Date(
         "2026-09-14T18:00:00+07:00"
     ).getTime();
-
 
 
 /* =================================
@@ -1441,8 +1612,6 @@ function updateCountdown() {
         surpriseDate - now;
 
 
-    /* ถ้าถึงเวลาแล้ว */
-
     if (distance <= 0) {
 
         document.getElementById("days")
@@ -1457,7 +1626,6 @@ function updateCountdown() {
         document.getElementById("seconds")
             .textContent = "0";
 
-
         document.querySelector(
             ".countdown-title"
         ).textContent =
@@ -1467,8 +1635,6 @@ function updateCountdown() {
     }
 
 
-    /* คำนวณวัน */
-
     const days =
         Math.floor(
             distance /
@@ -1476,40 +1642,38 @@ function updateCountdown() {
         );
 
 
-    /* คำนวณชั่วโมง */
-
     const hours =
         Math.floor(
-            (distance %
-                (1000 * 60 * 60 * 24))
+            (
+                distance %
+                (1000 * 60 * 60 * 24)
+            )
             /
             (1000 * 60 * 60)
         );
 
 
-    /* คำนวณนาที */
-
     const minutes =
         Math.floor(
-            (distance %
-                (1000 * 60 * 60))
+            (
+                distance %
+                (1000 * 60 * 60)
+            )
             /
             (1000 * 60)
         );
 
 
-    /* คำนวณวินาที */
-
     const seconds =
         Math.floor(
-            (distance %
-                (1000 * 60))
+            (
+                distance %
+                (1000 * 60)
+            )
             /
             1000
         );
 
-
-    /* แสดงผล */
 
     document.getElementById("days")
         .textContent = days;
@@ -1525,8 +1689,6 @@ function updateCountdown() {
 
 }
 
-
-/* เริ่ม Countdown */
 
 updateCountdown();
 
@@ -1549,8 +1711,6 @@ function openGift() {
 
     gift.classList.add("open");
 
-
-    /* รอ animation ก่อนเปลี่ยนหน้า */
 
     setTimeout(function() {
 
@@ -1629,8 +1789,6 @@ function checkPassword() {
         );
 
 
-        /* ทำให้ animation เล่นซ้ำ */
-
         void card.offsetWidth;
 
 
@@ -1671,16 +1829,38 @@ document.getElementById(
 
 
 /* =================================
-   เปิดหน้าเมนูแต่ละหน้า
+   เปิดหน้าแต่ละหมวด
 ================================= */
 
 function openPage(page) {
 
     const title =
-        document.getElementById("pageTitle");
+        document.getElementById(
+            "pageTitle"
+        );
 
     const text =
-        document.getElementById("pageText");
+        document.getElementById(
+            "pageText"
+        );
+
+    const icon =
+        document.getElementById(
+            "pageIcon"
+        );
+
+    const backButton =
+        document.getElementById(
+            "pageBackButton"
+        );
+
+
+    /*
+       ทุกครั้งที่เปิดจากเมนูหลัก
+       ให้กำหนด pageMode = menu
+    */
+
+    pageMode = "menu";
 
 
     /* =========================
@@ -1689,44 +1869,70 @@ function openPage(page) {
 
     if (page === "letter") {
 
+        icon.textContent = "💌";
+
         title.textContent =
             "จดหมายถึงเธอ 💌";
 
+
         text.innerHTML = `
+
             เค้าอาจจะไม่ใช่คนที่พูดเก่งที่สุด
             แสดงความรู้สึกไม่เก่ง
-            ทำตัวให้เธอปวดหัวอยู่บ่อยๆ
+            ทำตัวให้เธอปวดหัวอยู่บ่อย ๆ
             แต่เค้าอยากจะบอกเธอว่า
 
             <br><br>
 
-            ขอบคุณนะที่เธอเข้ามาเป็นส่วนหนึ่งในชีวิตของเค้า
-            ขอบคุณสำหรับทุกช่วงเวลาที่เราได้อยู่ด้วยกัน
-            ไม่ว่าจะเป็นวันที่มีความสุข วันที่หัวเราะด้วยกัน
+            ขอบคุณนะที่เธอเข้ามา
+            เป็นส่วนหนึ่งในชีวิตของเค้า
+
+            ขอบคุณสำหรับทุกช่วงเวลา
+            ที่เราได้อยู่ด้วยกัน
+
+            ไม่ว่าจะเป็นวันที่มีความสุข
+            วันที่หัวเราะด้วยกัน
             หรือแม้แต่วันที่เราไม่เข้าใจกัน
-            และขอบคุณที่ยอมรับและอดทนกับเค้าได้ขนาดนี้
+
+            และขอบคุณที่ยอมรับ
+            และอดทนกับเค้าได้ขนาดนี้
 
             <br><br>
 
             สำหรับเค้า
             ทุกช่วงเวลาที่มีเธอ
-            คือความทรงจำที่มีความหมายที่สุดและดีที่สุด 💕
+            คือความทรงจำที่มีความหมายที่สุด
+            และดีที่สุด 💕
 
             <br><br>
 
             เค้าไม่รู้ว่าอนาคตจะเป็นยังไง
-            แต่ในวันนี้เค้าอยากให้เธอรู้ว่า
+
+            แต่ในวันนี้
+            เค้าอยากให้เธอรู้ว่า
+
             เค้าโชคดีจริง ๆ
-            โชคดีมาก ๆ ที่มีเธออยู่ข้าง ๆ เค้าแบบนี้ 🥺
+            โชคดีมาก ๆ
+            ที่มีเธออยู่ข้าง ๆ เค้าแบบนี้ 🥺
 
             <br><br>
 
             ขอให้เธอมีความสุขมาก ๆ
+
             และไม่ว่าจะเกิดอะไรขึ้น
-            อย่าลืมว่ามีคนคนหนึ่งที่รักเธอมาก
+            อย่าลืมว่ามีคนคนหนึ่ง
+            ที่รักเธอมาก
+
             และจะรักแบบนี้ไปเรื่อย ๆ
-            จนกว่าจะถึงวันที่เราจะได้ใช้ชีวิตด้วยกัน 🩷🤍
+            จนกว่าจะถึงวันที่เรา
+            จะได้ใช้ชีวิตด้วยกัน 🩷🤍
+
         `;
+
+
+        backButton.textContent =
+            "💕 กลับไปหน้าเมนู";
+
     }
 
 
@@ -1736,139 +1942,18 @@ function openPage(page) {
 
     else if (page === "story") {
 
+        icon.textContent = "📖";
+
         title.textContent =
             "เรื่องราวของเรา 📖";
 
-        text.innerHTML = `
-            <div class="timeline">
 
-                <div class="timeline-item"
-                     onclick="showStory(1)">
-
-                    <div class="timeline-dot">
-                        🌱
-                    </div>
-
-                    <div class="timeline-box">
-
-                        <h3>
-                            วันที่เราได้รู้จักกัน
-                        </h3>
-
-                        <p>
-                            จุดเริ่มต้นของเรื่องราวของเรา
-                        </p>
-
-                    </div>
-                </div>
+        showStoryTimeline();
 
 
-                <div class="timeline-item"
-                     onclick="showStory(2)">
+        backButton.textContent =
+            "💕 กลับไปหน้าเมนู";
 
-                    <div class="timeline-dot">
-                        💕
-                    </div>
-
-                    <div class="timeline-box">
-
-                        <h3>
-                            วันที่เราเริ่มสนิทกัน
-                        </h3>
-
-                        <p>
-                            จากคนธรรมดา กลายเป็นคนพิเศษ
-                        </p>
-
-                    </div>
-                </div>
-
-
-                <div class="timeline-item"
-                     onclick="showStory(3)">
-
-                    <div class="timeline-dot">
-                        🥰
-                    </div>
-
-                    <div class="timeline-box">
-
-                        <h3>
-                            วันที่เราเริ่มมีความรู้สึกดี ๆ
-                        </h3>
-
-                        <p>
-                            ความสัมพันธ์ที่ค่อย ๆ เติบโตขึ้น
-                        </p>
-
-                    </div>
-                </div>
-
-
-                <div class="timeline-item"
-                     onclick="showStory(4)">
-
-                    <div class="timeline-dot">
-                        ❤️
-                    </div>
-
-                    <div class="timeline-box">
-
-                        <h3>
-                            วันที่เธอกลายเป็นคนสำคัญ
-                        </h3>
-
-                        <p>
-                            วันที่เค้ารู้ว่าไม่อยากเสียเธอไป
-                        </p>
-
-                    </div>
-                </div>
-
-
-                <div class="timeline-item"
-                     onclick="showStory(5)">
-
-                    <div class="timeline-dot">
-                        📸
-                    </div>
-
-                    <div class="timeline-box">
-
-                        <h3>
-                            ความทรงจำของเรา
-                        </h3>
-
-                        <p>
-                            ช่วงเวลาต่าง ๆ ที่เค้าอยากเก็บเอาไว้
-                        </p>
-
-                    </div>
-                </div>
-
-
-                <div class="timeline-item"
-                     onclick="showStory(6)">
-
-                    <div class="timeline-dot">
-                        🏡
-                    </div>
-
-                    <div class="timeline-box">
-
-                        <h3>
-                            เรื่องราวต่อจากนี้...
-                        </h3>
-
-                        <p>
-                            หน้าต่อไปของเรื่องราวของเรา
-                        </p>
-
-                    </div>
-                </div>
-
-            </div>
-        `;
     }
 
 
@@ -1878,10 +1963,14 @@ function openPage(page) {
 
     else if (page === "game") {
 
+        icon.textContent = "🎮";
+
         title.textContent =
             "🎮 เกมของเรา";
 
+
         text.innerHTML = `
+
             <div class="game-card">
 
                 <h2>
@@ -1889,8 +1978,11 @@ function openPage(page) {
                 </h2>
 
                 <p>
-                    มาดูกันว่าเธอรู้จักเค้ามากแค่ไหนนะ 😆
+                    มาดูกันว่า
+                    เธอรู้จักเค้ามากแค่ไหนนะ 😆
                 </p>
+
+                <br>
 
                 <button
                     class="main-btn"
@@ -1901,7 +1993,13 @@ function openPage(page) {
                 </button>
 
             </div>
+
         `;
+
+
+        backButton.textContent =
+            "💕 กลับไปหน้าเมนู";
+
     }
 
 
@@ -1911,182 +2009,169 @@ function openPage(page) {
 
     else if (page === "memory") {
 
-    title.textContent =
-        "📸 ความทรงจำของเรา";
+        icon.textContent = "📸";
 
-    text.innerHTML = `
-
-        <div class="memory-card">
-
-            <h2>
-                💕 อัลบั้มของเรา
-            </h2>
-
-            <p class="memory-subtitle">
-                รูปบางรูปอาจเป็นเพียงภาพธรรมดา
-                <br>
-                แต่สำหรับเค้า...
-                ทุกภาพมีเรื่องราวของเราอยู่ในนั้น 🥺
-            </p>
+        title.textContent =
+            "📸 ความทรงจำของเรา";
 
 
-            <div class="memory-album">
+        text.innerHTML = `
+
+            <div class="memory-card">
+
+                <h2>
+                    💕 อัลบั้มของเรา
+                </h2>
+
+                <p class="memory-subtitle">
+
+                    รูปบางรูปอาจเป็นเพียงภาพธรรมดา
+
+                    <br>
+
+                    แต่สำหรับเค้า...
+                    ทุกภาพมีเรื่องราว
+                    ของเราอยู่ในนั้น 🥺
+
+                </p>
 
 
-                <!-- =====================
-                     รูปที่ 1
-                ====================== -->
+                <div class="memory-album">
 
-                <div
-                    class="memory-item"
-                    onclick="openMemory(0)"
-                >
 
-                    <img
-                        src="photo1.jpg"
-                        alt="ความทรงจำที่ 1"
-                    >
+                    <div
+                        class="memory-item"
+                        onclick="openMemory(0)">
 
-                    <div class="memory-caption">
+                        <img
+                            src="photo1.jpg"
+                            alt="ความทรงจำที่ 1">
 
-                        <div class="memory-date">
-                            💕 วันที่เราได้อยู่ด้วยกัน
+                        <div class="memory-caption">
+
+                            <div class="memory-date">
+                                💕 วันที่เราได้อยู่ด้วยกัน
+                            </div>
+
+                            รูปนี้อาจไม่ได้พิเศษสำหรับใคร
+                            แต่สำหรับเค้าแล้ว
+                            เป็นอีกหนึ่งช่วงเวลาที่อยากเก็บเอาไว้ 🤍
+
                         </div>
-
-                        รูปนี้อาจไม่ได้พิเศษสำหรับใคร
-                        แต่สำหรับเค้าแล้ว
-                        เป็นอีกหนึ่งช่วงเวลาที่อยากเก็บเอาไว้ 🤍
 
                     </div>
 
-                </div>
 
 
-                <!-- =====================
-                     รูปที่ 2
-                ====================== -->
+                    <div
+                        class="memory-item"
+                        onclick="openMemory(1)">
 
-                <div
-                    class="memory-item"
-                    onclick="openMemory(1)"
-                >
+                        <img
+                            src="photo2.jpg"
+                            alt="ความทรงจำที่ 2">
 
-                    <img
-                        src="photo2.jpg"
-                        alt="ความทรงจำที่ 2"
-                    >
+                        <div class="memory-caption">
 
-                    <div class="memory-caption">
+                            <div class="memory-date">
+                                🥰 ช่วงเวลาที่เค้าชอบ
+                            </div>
 
-                        <div class="memory-date">
-                            🥰 ช่วงเวลาที่เค้าชอบ
+                            แค่ได้อยู่ด้วยกัน
+                            ทำอะไรธรรมดา ๆ ด้วยกัน
+                            ก็กลายเป็นความทรงจำดี ๆ ได้แล้ว 💕
+
                         </div>
-
-                        แค่ได้อยู่ด้วยกัน
-                        ทำอะไรธรรมดา ๆ ด้วยกัน
-                        ก็กลายเป็นความทรงจำดี ๆ ได้แล้ว 💕
 
                     </div>
 
-                </div>
 
 
-                <!-- =====================
-                     รูปที่ 3
-                ====================== -->
+                    <div
+                        class="memory-item"
+                        onclick="openMemory(2)">
 
-                <div
-                    class="memory-item"
-                    onclick="openMemory(2)"
-                >
+                        <img
+                            src="photo3.jpg"
+                            alt="ความทรงจำที่ 3">
 
-                    <img
-                        src="photo3.jpg"
-                        alt="ความทรงจำที่ 3"
-                    >
+                        <div class="memory-caption">
 
-                    <div class="memory-caption">
+                            <div class="memory-date">
+                                📸 อีกหนึ่งความทรงจำ
+                            </div>
 
-                        <div class="memory-date">
-                            📸 อีกหนึ่งความทรงจำ
+                            ขอบคุณนะ
+                            ที่ทำให้วันธรรมดา ๆ
+                            ของเค้ามีความหมายมากขึ้น 🩷
+
                         </div>
-
-                        ขอบคุณนะ
-                        ที่ทำให้วันธรรมดา ๆ
-                        ของเค้ามีความหมายมากขึ้น 🩷
 
                     </div>
 
-                </div>
 
 
-                <!-- =====================
-                     รูปที่ 4
-                ====================== -->
+                    <div
+                        class="memory-item"
+                        onclick="openMemory(3)">
 
-                <div
-                    class="memory-item"
-                    onclick="openMemory(3)"
-                >
+                        <img
+                            src="photo4.jpg"
+                            alt="ความทรงจำที่ 4">
 
-                    <img
-                        src="photo4.jpg"
-                        alt="ความทรงจำที่ 4"
-                    >
+                        <div class="memory-caption">
 
-                    <div class="memory-caption">
+                            <div class="memory-date">
+                                ❤️ ช่วงเวลาของเรา
+                            </div>
 
-                        <div class="memory-date">
-                            ❤️ ช่วงเวลาของเรา
+                            เค้าอยากเก็บช่วงเวลาแบบนี้
+                            เอาไว้ให้นานที่สุดเลย
+
                         </div>
-
-                        เค้าอยากเก็บช่วงเวลาแบบนี้
-                        เอาไว้ให้นานที่สุดเลย
 
                     </div>
 
-                </div>
 
 
-                <!-- =====================
-                     รูปที่ 5
-                ====================== -->
+                    <div
+                        class="memory-item"
+                        onclick="openMemory(4)">
 
-                <div
-                    class="memory-item"
-                    onclick="openMemory(4)"
-                >
+                        <img
+                            src="photo5.jpg"
+                            alt="ความทรงจำที่ 5">
 
-                    <img
-                        src="photo5.jpg"
-                        alt="ความทรงจำที่ 5"
-                    >
+                        <div class="memory-caption">
 
-                    <div class="memory-caption">
+                            <div class="memory-date">
+                                🥺 รูปที่เค้าอยากเก็บไว้
+                            </div>
 
-                        <div class="memory-date">
-                            🥺 รูปที่เค้าอยากเก็บไว้
+                            และหวังว่าในอนาคต
+                            อัลบั้มนี้จะมีรูปของเรา
+                            เพิ่มขึ้นอีกเยอะ ๆ เลย 💕
+
                         </div>
-
-                        และหวังว่าในอนาคต
-                        อัลบั้มนี้จะมีรูปของเรา
-                        เพิ่มขึ้นอีกเยอะ ๆ เลย 💕
 
                     </div>
 
-                </div>
 
+                </div>
 
             </div>
 
-        </div>
+        `;
 
-    `;
-}
+
+        backButton.textContent =
+            "💕 กลับไปหน้าเมนู";
+
+    }
 
 
     /* =========================
-       เปลี่ยนหน้า
+       แสดง pageScreen
     ========================= */
 
     document.getElementById(
@@ -2103,24 +2188,238 @@ function openPage(page) {
 
 
 /* =================================
+   แสดง Timeline เรื่องราว
+================================= */
+
+function showStoryTimeline() {
+
+    const text =
+        document.getElementById(
+            "pageText"
+        );
+
+
+    text.innerHTML = `
+
+        <div class="timeline">
+
+
+            <!-- เรื่องที่ 1 -->
+
+            <div
+                class="timeline-item"
+                onclick="showStory(1)">
+
+                <div class="timeline-dot">
+                    🌱
+                </div>
+
+                <div class="timeline-box">
+
+                    <h3>
+                        วันที่เราได้รู้จักกัน
+                    </h3>
+
+                    <p>
+                        จุดเริ่มต้นของเรื่องราวของเรา
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- เรื่องที่ 2 -->
+
+            <div
+                class="timeline-item"
+                onclick="showStory(2)">
+
+                <div class="timeline-dot">
+                    💕
+                </div>
+
+                <div class="timeline-box">
+
+                    <h3>
+                        วันที่เราเริ่มสนิทกัน
+                    </h3>
+
+                    <p>
+                        จากคนธรรมดา
+                        กลายเป็นคนพิเศษ
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- เรื่องที่ 3 -->
+
+            <div
+                class="timeline-item"
+                onclick="showStory(3)">
+
+                <div class="timeline-dot">
+                    🥰
+                </div>
+
+                <div class="timeline-box">
+
+                    <h3>
+                        วันที่เราเริ่มมีความรู้สึกดี ๆ
+                    </h3>
+
+                    <p>
+                        ความสัมพันธ์ที่ค่อย ๆ เติบโตขึ้น
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- เรื่องที่ 4 -->
+
+            <div
+                class="timeline-item"
+                onclick="showStory(4)">
+
+                <div class="timeline-dot">
+                    ❤️
+                </div>
+
+                <div class="timeline-box">
+
+                    <h3>
+                        วันที่เธอกลายเป็นคนสำคัญ
+                    </h3>
+
+                    <p>
+                        วันที่เค้ารู้ว่าไม่อยากเสียเธอไป
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- เรื่องที่ 5 -->
+
+            <div
+                class="timeline-item"
+                onclick="showStory(5)">
+
+                <div class="timeline-dot">
+                    📸
+                </div>
+
+                <div class="timeline-box">
+
+                    <h3>
+                        ความทรงจำของเรา
+                    </h3>
+
+                    <p>
+                        ช่วงเวลาต่าง ๆ
+                        ที่เค้าอยากเก็บเอาไว้
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- เรื่องที่ 6 -->
+
+            <div
+                class="timeline-item"
+                onclick="showStory(6)">
+
+                <div class="timeline-dot">
+                    🏡
+                </div>
+
+                <div class="timeline-box">
+
+                    <h3>
+                        เรื่องราวต่อจากนี้...
+                    </h3>
+
+                    <p>
+                        หน้าต่อไปของเรื่องราวของเรา
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    `;
+
+}
+
+
+
+/* =================================
    ระบบเรื่องราว
 ================================= */
 
 function showStory(number) {
 
     const title =
-        document.getElementById("pageTitle");
+        document.getElementById(
+            "pageTitle"
+        );
 
     const text =
-        document.getElementById("pageText");
+        document.getElementById(
+            "pageText"
+        );
 
+    const icon =
+        document.getElementById(
+            "pageIcon"
+        );
+
+    const backButton =
+        document.getElementById(
+            "pageBackButton"
+        );
+
+
+    /*
+       สำคัญมาก
+
+       เมื่อเข้ามาจาก Timeline
+       ให้จำไว้ว่าเราต้องกลับไป Timeline
+    */
+
+    pageMode = "story";
+
+
+    /* =========================
+       เรื่องที่ 1
+    ========================= */
 
     if (number === 1) {
+
+        icon.textContent = "🌱";
 
         title.textContent =
             "🌱 จุดเริ่มต้น";
 
+
         text.innerHTML = `
+
             วันนั้นเค้าอาจจะยังไม่รู้เลยว่า
             คนที่กำลังเข้ามาในชีวิต
             จะกลายเป็นคนสำคัญของเค้ามากขนาดนี้
@@ -2129,42 +2428,68 @@ function showStory(number) {
 
             จากการได้รู้จักกันธรรมดา ๆ
             กลับกลายเป็นจุดเริ่มต้น
-            ของเรื่องราวที่มีความหมายมากสำหรับเค้า 💕
+            ของเรื่องราวที่มีความหมาย
+            มากสำหรับเค้า 💕
+
         `;
+
     }
 
 
+    /* =========================
+       เรื่องที่ 2
+    ========================= */
+
     else if (number === 2) {
+
+        icon.textContent = "💕";
 
         title.textContent =
             "💕 วันที่เราเริ่มสนิทกัน";
 
+
         text.innerHTML = `
+
             จากคนที่เคยเป็นแค่คนธรรมดา
             ค่อย ๆ กลายเป็นคนที่เค้าอยากคุยด้วย
-            อยากอยู่ด้วย และอยากรู้จักมากขึ้นเรื่อย ๆ
+            อยากอยู่ด้วย
+            และอยากรู้จักมากขึ้นเรื่อย ๆ
 
             <br><br>
 
             จนวันหนึ่งเค้าก็รู้ตัวว่า
+
+            <br><br>
+
             การมีเธออยู่ในแต่ละวัน
             มันกลายเป็นเรื่องที่เค้าชอบไปแล้ว 🥺
+
         `;
+
     }
 
 
+    /* =========================
+       เรื่องที่ 3
+    ========================= */
+
     else if (number === 3) {
+
+        icon.textContent = "🥰";
 
         title.textContent =
             "🥰 ความรู้สึกที่ค่อย ๆ เติบโต";
 
+
         text.innerHTML = `
-            ความรู้สึกของเราอาจไม่ได้เกิดขึ้น
-            ในวันเดียว
+
+            ความรู้สึกของเรา
+            อาจไม่ได้เกิดขึ้นในวันเดียว
 
             <br><br>
 
             แต่มันค่อย ๆ เติบโตขึ้น
+
             จากบทสนทนาเล็ก ๆ
             จากรอยยิ้ม
             จากช่วงเวลาที่เราได้อยู่ด้วยกัน
@@ -2173,16 +2498,26 @@ function showStory(number) {
 
             จนเธอกลายเป็นหนึ่งในคน
             ที่เค้าอยากมีอยู่ในทุก ๆ วัน ❤️
+
         `;
+
     }
 
 
+    /* =========================
+       เรื่องที่ 4
+    ========================= */
+
     else if (number === 4) {
+
+        icon.textContent = "❤️";
 
         title.textContent =
             "❤️ คนสำคัญ";
 
+
         text.innerHTML = `
+
             แล้วก็มีวันหนึ่งที่เค้ารู้ว่า
 
             <br><br>
@@ -2199,18 +2534,29 @@ function showStory(number) {
 
             <br><br>
 
-            ขอบคุณนะที่เข้ามาเป็นส่วนหนึ่ง
+            ขอบคุณนะ
+            ที่เข้ามาเป็นส่วนหนึ่ง
             ในชีวิตของเค้า 🩷
+
         `;
+
     }
 
 
+    /* =========================
+       เรื่องที่ 5
+    ========================= */
+
     else if (number === 5) {
+
+        icon.textContent = "📸";
 
         title.textContent =
             "📸 ความทรงจำของเรา";
 
+
         text.innerHTML = `
+
             ทุกช่วงเวลาที่เราได้อยู่ด้วยกัน
             ไม่ว่าจะเป็นเรื่องเล็กหรือเรื่องใหญ่
 
@@ -2231,16 +2577,26 @@ function showStory(number) {
 
             และเค้าอยากสร้างความทรงจำ
             กับเธอเพิ่มขึ้นอีกเยอะ ๆ เลย 🥺
+
         `;
+
     }
 
 
+    /* =========================
+       เรื่องที่ 6
+    ========================= */
+
     else if (number === 6) {
+
+        icon.textContent = "🏡";
 
         title.textContent =
             "🏡 เรื่องราวต่อจากนี้...";
 
+
         text.innerHTML = `
+
             เค้าไม่รู้หรอกว่าอนาคตของเรา
             จะเป็นยังไง
 
@@ -2248,7 +2604,8 @@ function showStory(number) {
 
             แต่ถ้าเลือกได้
             เค้าก็อยากให้หน้าต่อไป
-            ของเรื่องราวนี้ยังมีเธออยู่ด้วย
+            ของเรื่องราวนี้
+            ยังมีเธออยู่ด้วย
 
             <br><br>
 
@@ -2267,8 +2624,75 @@ function showStory(number) {
                 เดินทางไปถึงวันที่
                 เราได้ใช้ชีวิตด้วยกัน 🩷🤍
             </strong>
+
         `;
+
     }
+
+
+    /*
+       เปลี่ยนปุ่มกลับ
+
+       เพราะ showStory()
+       ถูกเรียกจาก Timeline
+       ดังนั้นปุ่มต้องกลับ Timeline
+    */
+
+    backButton.textContent =
+        "💕 กลับไปเรื่องราว";
+
+}
+
+
+
+/* =================================
+   กลับไป Timeline เรื่องราว
+================================= */
+
+function backToStory() {
+
+    /*
+       เปลี่ยน icon
+    */
+
+    document.getElementById(
+        "pageIcon"
+    ).textContent = "📖";
+
+
+    /*
+       เปลี่ยนหัวข้อ
+    */
+
+    document.getElementById(
+        "pageTitle"
+    ).textContent =
+        "เรื่องราวของเรา 📖";
+
+
+    /*
+       สร้าง Timeline ใหม่
+    */
+
+    showStoryTimeline();
+
+
+    /*
+       ยังคงอยู่ใน pageScreen
+       ไม่ต้องเปิด menuScreen
+    */
+
+    pageMode = "story";
+
+
+    /*
+       เปลี่ยนข้อความปุ่ม
+    */
+
+    document.getElementById(
+        "pageBackButton"
+    ).textContent =
+        "💕 กลับไปหน้าเมนู";
 
 }
 
@@ -2362,6 +2786,7 @@ const questions = [
 ];
 
 
+
 function startGame() {
 
     currentQuestion = 0;
@@ -2373,13 +2798,31 @@ function startGame() {
 }
 
 
+
 function showQuestion() {
 
     const title =
-        document.getElementById("pageTitle");
+        document.getElementById(
+            "pageTitle"
+        );
 
     const text =
-        document.getElementById("pageText");
+        document.getElementById(
+            "pageText"
+        );
+
+    const icon =
+        document.getElementById(
+            "pageIcon"
+        );
+
+    const backButton =
+        document.getElementById(
+            "pageBackButton"
+        );
+
+
+    icon.textContent = "🎮";
 
 
     const q =
@@ -2394,6 +2837,7 @@ function showQuestion() {
 
 
     let html = `
+
         <div class="game-card">
 
             <h2>
@@ -2408,6 +2852,7 @@ function showQuestion() {
         (answer, index) => {
 
             html += `
+
                 <button
                     class="answer-btn"
                     onclick="answerQuestion(${index})">
@@ -2415,6 +2860,7 @@ function showQuestion() {
                     ${answer}
 
                 </button>
+
             `;
 
         }
@@ -2422,15 +2868,29 @@ function showQuestion() {
 
 
     html += `
+
             </div>
 
         </div>
+
     `;
 
 
     text.innerHTML = html;
 
+
+    /*
+       เกมยังถือว่าเปิดจากเมนู
+       ดังนั้นปุ่มกลับยังกลับเมนู
+    */
+
+    pageMode = "menu";
+
+    backButton.textContent =
+        "💕 กลับไปหน้าเมนู";
+
 }
+
 
 
 function answerQuestion(answer) {
@@ -2464,13 +2924,18 @@ function answerQuestion(answer) {
 }
 
 
+
 function finishGame() {
 
     const title =
-        document.getElementById("pageTitle");
+        document.getElementById(
+            "pageTitle"
+        );
 
     const text =
-        document.getElementById("pageText");
+        document.getElementById(
+            "pageText"
+        );
 
 
     title.textContent =
@@ -2478,6 +2943,7 @@ function finishGame() {
 
 
     text.innerHTML = `
+
         <div class="game-card">
 
             <h2>
@@ -2485,14 +2951,19 @@ function finishGame() {
             </h2>
 
             <p>
-                เธอตอบถูก ${score} / ${questions.length} ข้อ
+                เธอตอบถูก
+                ${score}
+                /
+                ${questions.length}
+                ข้อ
             </p>
 
             <br>
 
             <p>
                 ไม่ว่าคะแนนจะเป็นเท่าไหร่
-                สำหรับเค้า เธอก็ยังเป็นคนที่พิเศษที่สุดอยู่ดี 🩷
+                สำหรับเค้า
+                เธอก็ยังเป็นคนที่พิเศษที่สุดอยู่ดี 🩷
             </p>
 
             <br>
@@ -2513,8 +2984,16 @@ function finishGame() {
             </button>
 
         </div>
+
     `;
+
+
+    pageMode = "menu";
+
 }
+
+
+
 /* =================================
    ระบบอัลบั้มความทรงจำ
 ================================= */
@@ -2523,30 +3002,39 @@ const memories = [
 
     {
         image: "photo1.jpg",
+
         caption:
             "💕 วันที่เราได้อยู่ด้วยกัน — อีกหนึ่งช่วงเวลาที่เค้าอยากเก็บเอาไว้ 🤍"
     },
 
+
     {
         image: "photo2.jpg",
+
         caption:
             "🥰 ช่วงเวลาธรรมดา ๆ ที่มีเธออยู่ด้วย ก็กลายเป็นช่วงเวลาพิเศษแล้ว"
     },
 
+
     {
         image: "photo3.jpg",
+
         caption:
             "📸 ขอบคุณนะ ที่ทำให้วันธรรมดา ๆ ของเค้ามีความหมายมากขึ้น 🩷"
     },
 
+
     {
         image: "photo4.jpg",
+
         caption:
             "❤️ อีกหนึ่งความทรงจำที่เค้าอยากเก็บเอาไว้ให้นานที่สุด"
     },
 
+
     {
         image: "photo5.jpg",
+
         caption:
             "🥺 และหวังว่าในอนาคต อัลบั้มนี้จะมีรูปของเราเพิ่มขึ้นอีกเยอะ ๆ เลย 💕"
     }
@@ -2557,30 +3045,46 @@ const memories = [
 let currentMemory = 0;
 
 
+
 function openMemory(number) {
 
     currentMemory = number;
 
-    const modal =
-        document.getElementById("memoryModal");
 
-    modal.classList.add("active");
+    const modal =
+        document.getElementById(
+            "memoryModal"
+        );
+
+
+    modal.classList.add(
+        "active"
+    );
+
 
     showMemory();
 
 }
 
 
+
 function showMemory() {
 
     const image =
-        document.getElementById("memoryModalImage");
+        document.getElementById(
+            "memoryModalImage"
+        );
+
 
     const caption =
-        document.getElementById("memoryModalCaption");
+        document.getElementById(
+            "memoryModalCaption"
+        );
+
 
     image.src =
         memories[currentMemory].image;
+
 
     caption.textContent =
         memories[currentMemory].caption;
@@ -2588,9 +3092,11 @@ function showMemory() {
 }
 
 
+
 function nextMemory() {
 
     currentMemory++;
+
 
     if (
         currentMemory >=
@@ -2601,67 +3107,96 @@ function nextMemory() {
 
     }
 
+
     showMemory();
 
 }
+
 
 
 function previousMemory() {
 
     currentMemory--;
 
-    if (currentMemory < 0) {
+
+    if (
+        currentMemory < 0
+    ) {
 
         currentMemory =
             memories.length - 1;
 
     }
 
+
     showMemory();
 
 }
 
 
+
 function closeMemory() {
 
     document
-        .getElementById("memoryModal")
-        .classList.remove("active");
+        .getElementById(
+            "memoryModal"
+        )
+        .classList.remove(
+            "active"
+        );
 
 }
 
 
+
 /* =================================
-   กลับหน้าเมนู
+   ระบบกลับหน้า
 ================================= */
 
 function backToMenu() {
 
+    /*
+       ถ้าอยู่ในเรื่องราว
+       ให้กลับไป Timeline
+    */
+
+    if (
+        pageMode === "story"
+    ) {
+
+        backToStory();
+
+        return;
+
+    }
+
+
+    /*
+       กรณีอื่น ๆ
+       กลับเมนูหลักตามปกติ
+    */
+
     document.getElementById(
         "pageScreen"
-    ).classList.remove("active");
+    ).classList.remove(
+        "active"
+    );
 
 
     document.getElementById(
         "menuScreen"
-    ).classList.add("active");
+    ).classList.add(
+        "active"
+    );
+
+
+    pageMode = "menu";
 
 }
-function backToMenu() {
 
-    document.getElementById(
-        "pageScreen"
-    ).classList.remove("active");
-
-
-    document.getElementById(
-        "menuScreen"
-    ).classList.add("active");
-
-}
 
 </script>
 
-
 </body>
+
 </html>
