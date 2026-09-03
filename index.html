@@ -1175,19 +1175,22 @@ body {
 
 <body>
 
-    <!-- =========================
-         เพลงพื้นหลัง
-    ========================= -->
 
-    <audio
-        id="backgroundMusic"
-        loop>
-        <source
-            src="Love for a long time.mp3"
-            type="audio/mpeg">
+<!-- =========================
+     เพลงพื้นหลัง
+========================= -->
 
-    </audio>
-      
+<audio
+    id="backgroundMusic"
+    loop>
+
+    <source
+        src="Love for a long time.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
 <!-- =================================
      หน้าแรก
 ================================= -->
@@ -1595,8 +1598,16 @@ const correctPassword = "1404";
     ตอนนี้หน้า pageScreen
     ถูกเปิดมาจากส่วนไหน
 
-    "menu"  = มาจากเมนูหลัก
-    "story" = มาจากเรื่องราว
+    "menu"
+        = มาจากเมนูหลัก
+
+    "story"
+        = กำลังดูรายละเอียด
+          ของเรื่องราว
+
+    "storyTimeline"
+        = กำลังอยู่หน้า Timeline
+          ของเรื่องราว
 */
 
 let pageMode = "menu";
@@ -2442,8 +2453,6 @@ function showStory(number) {
 
 
     /*
-       สำคัญมาก
-
        เมื่อเข้ามาจาก Timeline
        ให้จำไว้ว่าเราต้องกลับไป Timeline
     */
@@ -2723,15 +2732,24 @@ function backToStory() {
 
 
     /*
-       ยังคงอยู่ใน pageScreen
-       ไม่ต้องเปิด menuScreen
+       สำคัญ:
+       ตอนนี้เราไม่ได้อยู่ใน
+       รายละเอียดเรื่องราวแล้ว
+
+       แต่กลับมาอยู่หน้า Timeline
+       ดังนั้นต้องใช้สถานะใหม่
+       เป็น storyTimeline
     */
 
-    pageMode = "story";
+    pageMode = "storyTimeline";
 
 
     /*
        เปลี่ยนข้อความปุ่ม
+
+       ปุ่มนี้เมื่อกดอีกครั้ง
+       จะออกจาก Timeline
+       กลับไปหน้าเมนูหลัก
     */
 
     document.getElementById(
@@ -3068,6 +3086,7 @@ const memories = [
             "📸 ขอบคุณนะ ที่ทำให้วันธรรมดา ๆ ของเค้ามีความหมายมากขึ้น 🩷"
     },
 
+
     {
         image: "IMG_0679.jpeg",
 
@@ -3199,10 +3218,10 @@ function closeMemory() {
 
 function backToMenu() {
 
-    /*
-       ถ้าอยู่ในเรื่องราว
-       ให้กลับไป Timeline
-    */
+
+    /* =================================
+       กรณีอยู่ในรายละเอียดเรื่องราว
+    ================================= */
 
     if (
         pageMode === "story"
@@ -3215,10 +3234,39 @@ function backToMenu() {
     }
 
 
-    /*
+    /* =================================
+       กรณีอยู่หน้า Timeline
+    ================================= */
+
+    if (
+        pageMode === "storyTimeline"
+    ) {
+
+        document.getElementById(
+            "pageScreen"
+        ).classList.remove(
+            "active"
+        );
+
+
+        document.getElementById(
+            "menuScreen"
+        ).classList.add(
+            "active"
+        );
+
+
+        pageMode = "menu";
+
+        return;
+
+    }
+
+
+    /* =================================
        กรณีอื่น ๆ
        กลับเมนูหลักตามปกติ
-    */
+    ================================= */
 
     document.getElementById(
         "pageScreen"
