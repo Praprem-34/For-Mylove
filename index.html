@@ -1111,6 +1111,275 @@ body {
 }
 
 
+/* =========================================================
+   หน้าสุดท้าย
+   รูปแบบ Polaroid / Scrapbook
+========================================================= */
+
+.final-screen-content {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    max-height: 92vh;
+
+    overflow-y: auto;
+
+    text-align: center;
+
+    padding: 10px 5px 30px;
+
+}
+
+.final-title {
+
+    color: #d96b9a;
+
+    font-size: 2rem;
+
+    margin-bottom: 8px;
+
+}
+
+.final-subtitle {
+
+    color: #777;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* =========================
+   กล่องรวมรูป
+========================= */
+
+.final-photo-wall {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 560px;
+
+    min-height: 610px;
+
+    margin: 0 auto 25px;
+
+}
+
+
+/* =========================
+   การ์ดรูป
+========================= */
+
+.final-photo {
+
+    position: absolute;
+
+    background: #ffffff;
+
+    padding: 12px 12px 18px;
+
+    width: 220px;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 12px 25px
+        rgba(80,50,80,0.18);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    cursor: pointer;
+
+}
+
+
+/* รูป */
+
+.final-photo img {
+
+    width: 100%;
+
+    height: 190px;
+
+    object-fit: cover;
+
+    display: block;
+
+    margin-bottom: 12px;
+
+}
+
+
+/* ข้อความใต้รูป */
+
+.final-photo-text {
+
+    color: #5a4050;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    padding:
+        0 4px;
+
+}
+
+
+/* เอฟเฟกต์ตอนแตะ */
+
+.final-photo:hover {
+
+    transform:
+        rotate(0deg)
+        scale(1.05)
+        translateY(-5px);
+
+    box-shadow:
+        0 18px 35px
+        rgba(80,50,80,0.25);
+
+    z-index: 20;
+
+}
+
+
+/* =========================
+   ตำแหน่งรูปแต่ละใบ
+========================= */
+
+.final-photo-1 {
+
+    left: 25px;
+
+    top: 20px;
+
+    transform:
+        rotate(-7deg);
+
+    z-index: 3;
+
+}
+
+
+.final-photo-2 {
+
+    right: 25px;
+
+    top: 45px;
+
+    transform:
+        rotate(6deg);
+
+    z-index: 4;
+
+}
+
+
+.final-photo-3 {
+
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        rotate(-2deg);
+
+    top: 225px;
+
+    z-index: 6;
+
+}
+
+
+.final-photo-4 {
+
+    right: 45px;
+
+    top: 425px;
+
+    transform:
+        rotate(-6deg);
+
+    z-index: 5;
+
+}
+
+
+/* =========================
+   เทปตกแต่ง
+========================= */
+
+.final-photo::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 65px;
+
+    height: 18px;
+
+    background:
+        rgba(255,214,231,0.75);
+
+    top: -9px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        rotate(-3deg);
+
+    z-index: 10;
+
+}
+
+
+/* =========================
+   ข้อความปิดท้าย
+========================= */
+
+.final-message {
+
+    background:
+        rgba(255,255,255,0.88);
+
+    border-radius: 22px;
+
+    padding:
+        22px 20px;
+
+    margin:
+        0 auto 20px;
+
+    max-width: 520px;
+
+    line-height: 1.9;
+
+    color: #5a4050;
+
+    box-shadow:
+        0 8px 20px
+        rgba(100,60,100,0.10);
+
+}
+
+
+.final-message strong {
+
+    color: #d96b9a;
+
+}
+
+
 /* =========================
    มือถือ
 ========================= */
@@ -1167,6 +1436,121 @@ body {
         font-size: 14px;
     }
 
+
+    /* =========================
+       หน้าสุดท้ายมือถือ
+    ========================= */
+
+    .final-screen-content {
+
+        max-height: 94vh;
+
+        padding:
+            5px 0 25px;
+
+    }
+
+
+    .final-title {
+
+        font-size: 1.65rem;
+
+    }
+
+
+    .final-subtitle {
+
+        font-size: 14px;
+
+        padding:
+            0 15px;
+
+    }
+
+
+    .final-photo-wall {
+
+        min-height: 500px;
+
+        transform:
+            scale(0.92);
+
+        transform-origin:
+            top center;
+
+        margin-bottom:
+            -20px;
+
+    }
+
+
+    .final-photo {
+
+        width: 175px;
+
+        padding:
+            9px 9px 14px;
+
+    }
+
+
+    .final-photo img {
+
+        height: 145px;
+
+    }
+
+
+    .final-photo-text {
+
+        font-size: 12px;
+
+    }
+
+
+    .final-photo-1 {
+
+        left: 5px;
+
+        top: 15px;
+
+    }
+
+
+    .final-photo-2 {
+
+        right: 5px;
+
+        top: 35px;
+
+    }
+
+
+    .final-photo-3 {
+
+        top: 190px;
+
+    }
+
+
+    .final-photo-4 {
+
+        right: 20px;
+
+        top: 355px;
+
+    }
+
+
+    .final-message {
+
+        margin:
+            0 10px 20px;
+
+        font-size: 14px;
+
+    }
+
 }
 
 </style>
@@ -1189,6 +1573,7 @@ body {
         type="audio/mpeg">
 
 </audio>
+
 
 
 <!-- =================================
@@ -1523,6 +1908,187 @@ body {
 
 
 <!-- =================================
+     หน้าสุดท้าย
+================================= -->
+
+<section
+    id="finalScreen"
+    class="screen">
+
+    <div class="final-screen-content">
+
+
+        <h1 class="final-title">
+            💕 เรื่องราวของเราต่อจากนี้ 💕
+        </h1>
+
+
+        <p class="final-subtitle">
+
+            บางช่วงเวลาอาจผ่านไปแล้ว
+
+            <br>
+
+            แต่ความทรงจำเหล่านั้น
+            จะยังอยู่ในใจของเค้าเสมอ 🥺
+
+        </p>
+
+
+
+        <!-- =================================
+             พื้นที่รูป 4 รูป
+        ================================= -->
+
+        <div class="final-photo-wall">
+
+
+            <!-- รูปที่ 1 -->
+
+            <div
+                class="final-photo final-photo-1">
+
+                <img
+                    src="final-photo-1.jpg"
+                    alt="ความทรงจำของเรา 1">
+
+                <div class="final-photo-text">
+
+                    💕
+                    รูปแรกของเรื่องราว
+                    ที่เค้าอยากเก็บเอาไว้
+
+                </div>
+
+            </div>
+
+
+
+            <!-- รูปที่ 2 -->
+
+            <div
+                class="final-photo final-photo-2">
+
+                <img
+                    src="final-photo-2.jpg"
+                    alt="ความทรงจำของเรา 2">
+
+                <div class="final-photo-text">
+
+                    🥰
+                    อีกหนึ่งช่วงเวลาที่
+                    เค้าชอบมากที่สุด
+
+                </div>
+
+            </div>
+
+
+
+            <!-- รูปที่ 3 -->
+
+            <div
+                class="final-photo final-photo-3">
+
+                <img
+                    src="final-photo-3.jpg"
+                    alt="ความทรงจำของเรา 3">
+
+                <div class="final-photo-text">
+
+                    📸
+                    รูปธรรมดา ๆ
+                    แต่มีความหมายสำหรับเค้า
+
+                </div>
+
+            </div>
+
+
+
+            <!-- รูปที่ 4 -->
+
+            <div
+                class="final-photo final-photo-4">
+
+                <img
+                    src="final-photo-4.jpg"
+                    alt="ความทรงจำของเรา 4">
+
+                <div class="final-photo-text">
+
+                    ❤️
+                    และหวังว่าจะมีรูปของเรา
+                    เพิ่มขึ้นอีกเรื่อย ๆ
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================
+             ข้อความสุดท้าย
+        ================================= -->
+
+        <div class="final-message">
+
+            ถึงแม้เรื่องราวที่ผ่านมา
+            จะมีทั้งวันที่ดีและวันที่ไม่ดี
+
+            <br><br>
+
+            แต่สำหรับเค้าแล้ว
+            ทุกช่วงเวลาที่มีเธออยู่ในนั้น
+            ล้วนมีความหมาย
+
+            <br><br>
+
+            ขอบคุณนะ
+            ที่เดินเข้ามาในชีวิตของเค้า
+
+            <br><br>
+
+            <strong>
+
+                และถ้าเรื่องราวของเรายังมีหน้าต่อไป...
+
+                <br>
+
+                เค้าก็อยากให้หน้าต่อไปนั้น
+                ยังมีเธออยู่ด้วยเสมอ 🩷🤍
+
+            </strong>
+
+            <br><br>
+
+            รักเธอนะ 💕
+
+        </div>
+
+
+
+        <!-- ปุ่มกลับเมนู -->
+
+        <button
+            class="main-btn"
+            onclick="backToMenuFromFinal()">
+
+            💕 กลับไปหน้าเมนู
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
      หน้าต่างรูปความทรงจำ
 ================================= -->
 
@@ -1579,6 +2145,7 @@ body {
 </div>
 
 
+
 <script>
 
 
@@ -1589,28 +2156,13 @@ body {
 const correctPassword = "1404";
 
 
+
 /* =================================
    ตัวแปรระบบหน้า
 ================================= */
 
-/*
-    pageMode ใช้บอกว่า
-    ตอนนี้หน้า pageScreen
-    ถูกเปิดมาจากส่วนไหน
-
-    "menu"
-        = มาจากเมนูหลัก
-
-    "story"
-        = กำลังดูรายละเอียด
-          ของเรื่องราว
-
-    "storyTimeline"
-        = กำลังอยู่หน้า Timeline
-          ของเรื่องราว
-*/
-
 let pageMode = "menu";
+
 
 
 /* =================================
@@ -1621,6 +2173,7 @@ const surpriseDate =
     new Date(
         "2026-09-14T18:00:00+07:00"
     ).getTime();
+
 
 
 /* =================================
@@ -1790,6 +2343,7 @@ function openGift() {
 }
 
 
+
 /* =================================
    ตรวจสอบรหัส
 ================================= */
@@ -1919,6 +2473,7 @@ function openPage(page) {
     pageMode = "menu";
 
 
+
     /* =========================
        จดหมาย
     ========================= */
@@ -1992,6 +2547,7 @@ function openPage(page) {
     }
 
 
+
     /* =========================
        เรื่องราว
     ========================= */
@@ -2011,6 +2567,7 @@ function openPage(page) {
             "💕 กลับไปหน้าเมนู";
 
     }
+
 
 
     /* =========================
@@ -2057,6 +2614,7 @@ function openPage(page) {
             "💕 กลับไปหน้าเมนู";
 
     }
+
 
 
     /* =========================
@@ -2224,6 +2782,7 @@ function openPage(page) {
             "💕 กลับไปหน้าเมนู";
 
     }
+
 
 
     /* =========================
@@ -2460,6 +3019,7 @@ function showStory(number) {
     pageMode = "story";
 
 
+
     /* =========================
        เรื่องที่ 1
     ========================= */
@@ -2488,6 +3048,7 @@ function showStory(number) {
         `;
 
     }
+
 
 
     /* =========================
@@ -2523,6 +3084,7 @@ function showStory(number) {
     }
 
 
+
     /* =========================
        เรื่องที่ 3
     ========================= */
@@ -2556,6 +3118,7 @@ function showStory(number) {
         `;
 
     }
+
 
 
     /* =========================
@@ -2597,6 +3160,7 @@ function showStory(number) {
     }
 
 
+
     /* =========================
        เรื่องที่ 5
     ========================= */
@@ -2635,6 +3199,7 @@ function showStory(number) {
         `;
 
     }
+
 
 
     /* =========================
@@ -2684,16 +3249,34 @@ function showStory(number) {
     }
 
 
+
     /*
        เปลี่ยนปุ่มกลับ
 
-       เพราะ showStory()
-       ถูกเรียกจาก Timeline
-       ดังนั้นปุ่มต้องกลับ Timeline
+       ตรงนี้คือจุดสำคัญ
+
+       จากเดิม:
+       "💕 กลับไปเรื่องราว"
+
+       เปลี่ยนเป็น:
+       "💕 หน้าถัดไป"
+
+       และเมื่อกดแล้ว
+       จะไปหน้าสุดท้ายทันที
     */
 
     backButton.textContent =
-        "💕 กลับไปเรื่องราว";
+        "💕 หน้าถัดไป";
+
+
+
+    /*
+       เปลี่ยน onclick ของปุ่ม
+       ให้ไปหน้าสุดท้าย
+    */
+
+    backButton.onclick =
+        goToFinalPage;
 
 }
 
@@ -2732,30 +3315,99 @@ function backToStory() {
 
 
     /*
-       สำคัญ:
-       ตอนนี้เราไม่ได้อยู่ใน
-       รายละเอียดเรื่องราวแล้ว
-
-       แต่กลับมาอยู่หน้า Timeline
-       ดังนั้นต้องใช้สถานะใหม่
-       เป็น storyTimeline
+       ยังคงอยู่ใน pageScreen
     */
 
-    pageMode = "storyTimeline";
+    pageMode = "story";
 
 
     /*
-       เปลี่ยนข้อความปุ่ม
+       ปุ่มกลับ Timeline
+       ให้กลับเมนู
+    */
 
-       ปุ่มนี้เมื่อกดอีกครั้ง
-       จะออกจาก Timeline
-       กลับไปหน้าเมนูหลัก
+    const backButton =
+        document.getElementById(
+            "pageBackButton"
+        );
+
+
+    backButton.textContent =
+        "💕 กลับไปหน้าเมนู";
+
+
+    backButton.onclick =
+        backToMenu;
+
+}
+
+
+
+/* =================================
+   ไปหน้าสุดท้าย
+================================= */
+
+function goToFinalPage() {
+
+    /*
+       ซ่อน pageScreen
     */
 
     document.getElementById(
-        "pageBackButton"
-    ).textContent =
-        "💕 กลับไปหน้าเมนู";
+        "pageScreen"
+    ).classList.remove(
+        "active"
+    );
+
+
+    /*
+       แสดง finalScreen
+    */
+
+    document.getElementById(
+        "finalScreen"
+    ).classList.add(
+        "active"
+    );
+
+
+    /*
+       ให้เริ่มด้านบนสุดทุกครั้ง
+    */
+
+    const finalContent =
+        document.querySelector(
+            ".final-screen-content"
+        );
+
+
+    finalContent.scrollTop = 0;
+
+}
+
+
+
+/* =================================
+   กลับจากหน้าสุดท้ายไปเมนู
+================================= */
+
+function backToMenuFromFinal() {
+
+    document.getElementById(
+        "finalScreen"
+    ).classList.remove(
+        "active"
+    );
+
+
+    document.getElementById(
+        "menuScreen"
+    ).classList.add(
+        "active"
+    );
+
+
+    pageMode = "menu";
 
 }
 
@@ -2768,6 +3420,7 @@ function backToStory() {
 let currentQuestion = 0;
 
 let score = 0;
+
 
 
 const questions = [
@@ -2943,14 +3596,16 @@ function showQuestion() {
 
 
     /*
-       เกมยังถือว่าเปิดจากเมนู
-       ดังนั้นปุ่มกลับยังกลับเมนู
+       เกมเปิดจากเมนู
     */
 
     pageMode = "menu";
 
     backButton.textContent =
         "💕 กลับไปหน้าเมนู";
+
+    backButton.onclick =
+        backToMenu;
 
 }
 
@@ -3218,10 +3873,10 @@ function closeMemory() {
 
 function backToMenu() {
 
-
-    /* =================================
-       กรณีอยู่ในรายละเอียดเรื่องราว
-    ================================= */
+    /*
+       ถ้าอยู่ในเรื่องราว
+       ให้กลับไป Timeline
+    */
 
     if (
         pageMode === "story"
@@ -3234,39 +3889,10 @@ function backToMenu() {
     }
 
 
-    /* =================================
-       กรณีอยู่หน้า Timeline
-    ================================= */
-
-    if (
-        pageMode === "storyTimeline"
-    ) {
-
-        document.getElementById(
-            "pageScreen"
-        ).classList.remove(
-            "active"
-        );
-
-
-        document.getElementById(
-            "menuScreen"
-        ).classList.add(
-            "active"
-        );
-
-
-        pageMode = "menu";
-
-        return;
-
-    }
-
-
-    /* =================================
+    /*
        กรณีอื่น ๆ
        กลับเมนูหลักตามปกติ
-    ================================= */
+    */
 
     document.getElementById(
         "pageScreen"
@@ -3284,8 +3910,24 @@ function backToMenu() {
 
     pageMode = "menu";
 
-}
 
+    /*
+       คืนค่าปุ่มกลับ
+       เผื่อเปิดหน้าใหม่อีกครั้ง
+    */
+
+    document.getElementById(
+        "pageBackButton"
+    ).textContent =
+        "💕 กลับไปหน้าเมนู";
+
+
+    document.getElementById(
+        "pageBackButton"
+    ).onclick =
+        backToMenu;
+
+}
 
 </script>
 
