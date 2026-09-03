@@ -1173,7 +1173,7 @@ body {
 
 </head>
 
-   <body>
+<body>
 
 
 <!-- =================================
@@ -1563,7 +1563,8 @@ body {
 
 </div>
 
-      <script>
+
+<script>
 
 
 /* =================================
@@ -1576,15 +1577,6 @@ const correctPassword = "1404";
 /* =================================
    ตัวแปรระบบหน้า
 ================================= */
-
-/*
-    pageMode ใช้บอกว่า
-    ตอนนี้หน้า pageScreen
-    ถูกเปิดมาจากส่วนไหน
-
-    "menu"  = มาจากเมนูหลัก
-    "story" = มาจากเรื่องราว
-*/
 
 let pageMode = "menu";
 
@@ -1855,11 +1847,6 @@ function openPage(page) {
         );
 
 
-    /*
-       ทุกครั้งที่เปิดจากเมนูหลัก
-       ให้กำหนด pageMode = menu
-    */
-
     pageMode = "menu";
 
 
@@ -2039,12 +2026,14 @@ function openPage(page) {
                 <div class="memory-album">
 
 
+                    <!-- รูปที่ 1 -->
+
                     <div
                         class="memory-item"
                         onclick="openMemory(0)">
 
                         <img
-                            src="photo1.jpg"
+                            src="IMG_1173.jpeg"
                             alt="ความทรงจำที่ 1">
 
                         <div class="memory-caption">
@@ -2063,12 +2052,14 @@ function openPage(page) {
 
 
 
+                    <!-- รูปที่ 2 -->
+
                     <div
                         class="memory-item"
                         onclick="openMemory(1)">
 
                         <img
-                            src="photo2.jpg"
+                            src="IMG_1172.jpeg"
                             alt="ความทรงจำที่ 2">
 
                         <div class="memory-caption">
@@ -2087,12 +2078,14 @@ function openPage(page) {
 
 
 
+                    <!-- รูปที่ 3 -->
+
                     <div
                         class="memory-item"
                         onclick="openMemory(2)">
 
                         <img
-                            src="photo3.jpg"
+                            src="IMG_1174.jpeg"
                             alt="ความทรงจำที่ 3">
 
                         <div class="memory-caption">
@@ -2111,12 +2104,14 @@ function openPage(page) {
 
 
 
+                    <!-- รูปที่ 4 -->
+
                     <div
                         class="memory-item"
                         onclick="openMemory(3)">
 
                         <img
-                            src="photo4.jpg"
+                            src="IMG_0679.jpeg"
                             alt="ความทรงจำที่ 4">
 
                         <div class="memory-caption">
@@ -2134,12 +2129,14 @@ function openPage(page) {
 
 
 
+                    <!-- รูปที่ 5 -->
+
                     <div
                         class="memory-item"
                         onclick="openMemory(4)">
 
                         <img
-                            src="photo5.jpg"
+                            src="IMG_0933.jpeg"
                             alt="ความทรงจำที่ 5">
 
                         <div class="memory-caption">
@@ -2396,13 +2393,6 @@ function showStory(number) {
         );
 
 
-    /*
-       สำคัญมาก
-
-       เมื่อเข้ามาจาก Timeline
-       ให้จำไว้ว่าเราต้องกลับไป Timeline
-    */
-
     pageMode = "story";
 
 
@@ -2630,14 +2620,6 @@ function showStory(number) {
     }
 
 
-    /*
-       เปลี่ยนปุ่มกลับ
-
-       เพราะ showStory()
-       ถูกเรียกจาก Timeline
-       ดังนั้นปุ่มต้องกลับ Timeline
-    */
-
     backButton.textContent =
         "💕 กลับไปเรื่องราว";
 
@@ -2651,18 +2633,10 @@ function showStory(number) {
 
 function backToStory() {
 
-    /*
-       เปลี่ยน icon
-    */
-
     document.getElementById(
         "pageIcon"
     ).textContent = "📖";
 
-
-    /*
-       เปลี่ยนหัวข้อ
-    */
 
     document.getElementById(
         "pageTitle"
@@ -2670,24 +2644,11 @@ function backToStory() {
         "เรื่องราวของเรา 📖";
 
 
-    /*
-       สร้าง Timeline ใหม่
-    */
-
     showStoryTimeline();
 
 
-    /*
-       ยังคงอยู่ใน pageScreen
-       ไม่ต้องเปิด menuScreen
-    */
-
     pageMode = "story";
 
-
-    /*
-       เปลี่ยนข้อความปุ่ม
-    */
 
     document.getElementById(
         "pageBackButton"
@@ -2879,11 +2840,6 @@ function showQuestion() {
     text.innerHTML = html;
 
 
-    /*
-       เกมยังถือว่าเปิดจากเมนู
-       ดังนั้นปุ่มกลับยังกลับเมนู
-    */
-
     pageMode = "menu";
 
     backButton.textContent =
@@ -3001,7 +2957,7 @@ function finishGame() {
 const memories = [
 
     {
-        image: "photo1.jpg",
+        image: "IMG_1173.jpeg",
 
         caption:
             "💕 วันที่เราได้อยู่ด้วยกัน — อีกหนึ่งช่วงเวลาที่เค้าอยากเก็บเอาไว้ 🤍"
@@ -3009,7 +2965,7 @@ const memories = [
 
 
     {
-        image: "photo2.jpg",
+        image: "IMG_1172.jpeg",
 
         caption:
             "🥰 ช่วงเวลาธรรมดา ๆ ที่มีเธออยู่ด้วย ก็กลายเป็นช่วงเวลาพิเศษแล้ว"
@@ -3017,7 +2973,7 @@ const memories = [
 
 
     {
-        image: "photo3.jpg",
+        image: "IMG_1174.jpeg",
 
         caption:
             "📸 ขอบคุณนะ ที่ทำให้วันธรรมดา ๆ ของเค้ามีความหมายมากขึ้น 🩷"
@@ -3025,7 +2981,7 @@ const memories = [
 
 
     {
-        image: "photo4.jpg",
+        image: "IMG_0679.jpeg",
 
         caption:
             "❤️ อีกหนึ่งความทรงจำที่เค้าอยากเก็บเอาไว้ให้นานที่สุด"
@@ -3033,7 +2989,7 @@ const memories = [
 
 
     {
-        image: "photo5.jpg",
+        image: "IMG_0933.jpeg",
 
         caption:
             "🥺 และหวังว่าในอนาคต อัลบั้มนี้จะมีรูปของเราเพิ่มขึ้นอีกเยอะ ๆ เลย 💕"
