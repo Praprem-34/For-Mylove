@@ -1731,14 +1731,20 @@ function openGift() {
 
     music.volume = 0.5;
 
-    music.play().catch(function(error) {
+    music.play()
+        .then(function() {
 
-        console.log(
-            "ไม่สามารถเล่นเพลงอัตโนมัติได้:",
-            error
-        );
+            console.log("เปิดเพลงสำเร็จ");
 
-    });
+        })
+        .catch(function(error) {
+
+            console.log(
+                "ไม่สามารถเล่นเพลงได้:",
+                error
+            );
+
+        });
 
 
     /* =========================
