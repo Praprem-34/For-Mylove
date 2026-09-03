@@ -561,6 +561,53 @@ body {
 
 
 /* =========================
+   ปุ่มที่ 5
+   ช่วงเวลาของเรา
+========================= */
+
+.menu-item-final {
+
+    grid-column:
+        1 / -1;
+
+    width: 100%;
+
+    max-width: 400px;
+
+    justify-self: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fff0f7
+        );
+
+    border:
+        2px solid #ffc0d5;
+
+    color: #d96b9a;
+
+    box-shadow:
+        0 8px 20px
+        rgba(217,107,154,0.18);
+
+}
+
+.menu-item-final:hover {
+
+    transform:
+        translateY(-6px)
+        scale(1.03);
+
+    box-shadow:
+        0 12px 25px
+        rgba(217,107,154,0.25);
+
+}
+
+
+/* =========================
    หน้าจดหมาย
 ========================= */
 
@@ -1551,6 +1598,22 @@ body {
 
     }
 
+
+    /* =========================
+       ปุ่มที่ 5 บนมือถือ
+    ========================= */
+
+    .menu-item-final {
+
+        grid-column:
+            1 / -1;
+
+        width: 100%;
+
+        max-width: 100%;
+
+    }
+
 }
 
 </style>
@@ -1782,6 +1845,10 @@ body {
         <div class="menu-grid">
 
 
+            <!-- =========================
+                 ปุ่มที่ 1
+            ========================= -->
+
             <button
                 class="menu-item"
                 onclick="openPage('letter')">
@@ -1794,6 +1861,10 @@ body {
 
             </button>
 
+
+            <!-- =========================
+                 ปุ่มที่ 2
+            ========================= -->
 
             <button
                 class="menu-item"
@@ -1808,6 +1879,10 @@ body {
             </button>
 
 
+            <!-- =========================
+                 ปุ่มที่ 3
+            ========================= -->
+
             <button
                 class="menu-item"
                 onclick="openPage('game')">
@@ -1821,6 +1896,10 @@ body {
             </button>
 
 
+            <!-- =========================
+                 ปุ่มที่ 4
+            ========================= -->
+
             <button
                 class="menu-item"
                 onclick="openPage('memory')">
@@ -1829,6 +1908,24 @@ body {
 
                 <span>
                     ความทรงจำ
+                </span>
+
+            </button>
+
+
+            <!-- =================================
+                 ปุ่มที่ 5
+                 กดแล้วไปหน้าสุดท้ายทันที
+            ================================= -->
+
+            <button
+                class="menu-item menu-item-final"
+                onclick="goToFinalPage()">
+
+                💕
+
+                <span>
+                    ช่วงเวลาของเรา
                 </span>
 
             </button>
@@ -2289,10 +2386,6 @@ function openGift() {
         document.getElementById("backgroundMusic");
 
 
-    /* =========================
-       เปิดเพลง
-    ========================= */
-
     music.volume = 0.5;
 
     music.play()
@@ -2311,16 +2404,8 @@ function openGift() {
         });
 
 
-    /* =========================
-       เปิดกล่องของขวัญ
-    ========================= */
-
     gift.classList.add("open");
 
-
-    /* =========================
-       เปลี่ยนไปหน้ารหัสผ่าน
-    ========================= */
 
     setTimeout(function() {
 
@@ -2465,13 +2550,7 @@ function openPage(page) {
         );
 
 
-    /*
-       ทุกครั้งที่เปิดจากเมนูหลัก
-       ให้กำหนด pageMode = menu
-    */
-
     pageMode = "menu";
-
 
 
     /* =========================
@@ -2819,8 +2898,6 @@ function showStoryTimeline() {
         <div class="timeline">
 
 
-            <!-- เรื่องที่ 1 -->
-
             <div
                 class="timeline-item"
                 onclick="showStory(1)">
@@ -2844,8 +2921,6 @@ function showStoryTimeline() {
             </div>
 
 
-
-            <!-- เรื่องที่ 2 -->
 
             <div
                 class="timeline-item"
@@ -2872,8 +2947,6 @@ function showStoryTimeline() {
 
 
 
-            <!-- เรื่องที่ 3 -->
-
             <div
                 class="timeline-item"
                 onclick="showStory(3)">
@@ -2897,8 +2970,6 @@ function showStoryTimeline() {
             </div>
 
 
-
-            <!-- เรื่องที่ 4 -->
 
             <div
                 class="timeline-item"
@@ -2924,8 +2995,6 @@ function showStoryTimeline() {
 
 
 
-            <!-- เรื่องที่ 5 -->
-
             <div
                 class="timeline-item"
                 onclick="showStory(5)">
@@ -2950,8 +3019,6 @@ function showStoryTimeline() {
             </div>
 
 
-
-            <!-- เรื่องที่ 6 -->
 
             <div
                 class="timeline-item"
@@ -3011,13 +3078,7 @@ function showStory(number) {
         );
 
 
-    /*
-       เมื่อเข้ามาจาก Timeline
-       ให้จำไว้ว่าเราต้องกลับไป Timeline
-    */
-
     pageMode = "story";
-
 
 
     /* =========================
@@ -3249,31 +3310,18 @@ function showStory(number) {
     }
 
 
-
     /*
-       เปลี่ยนปุ่มกลับ
-
-       ตรงนี้คือจุดสำคัญ
-
-       จากเดิม:
-       "💕 กลับไปเรื่องราว"
-
-       เปลี่ยนเป็น:
+       จุดสำคัญ:
+       เมื่อเปิดเรื่องใดเรื่องหนึ่ง
+       ปุ่มด้านล่างจะเปลี่ยนเป็น
        "💕 หน้าถัดไป"
 
-       และเมื่อกดแล้ว
-       จะไปหน้าสุดท้ายทันที
+       และกดแล้วไปหน้าสุดท้ายทันที
     */
 
     backButton.textContent =
         "💕 หน้าถัดไป";
 
-
-
-    /*
-       เปลี่ยน onclick ของปุ่ม
-       ให้ไปหน้าสุดท้าย
-    */
 
     backButton.onclick =
         goToFinalPage;
@@ -3288,18 +3336,10 @@ function showStory(number) {
 
 function backToStory() {
 
-    /*
-       เปลี่ยน icon
-    */
-
     document.getElementById(
         "pageIcon"
     ).textContent = "📖";
 
-
-    /*
-       เปลี่ยนหัวข้อ
-    */
 
     document.getElementById(
         "pageTitle"
@@ -3307,24 +3347,11 @@ function backToStory() {
         "เรื่องราวของเรา 📖";
 
 
-    /*
-       สร้าง Timeline ใหม่
-    */
-
     showStoryTimeline();
 
 
-    /*
-       ยังคงอยู่ใน pageScreen
-    */
-
     pageMode = "story";
 
-
-    /*
-       ปุ่มกลับ Timeline
-       ให้กลับเมนู
-    */
 
     const backButton =
         document.getElementById(
@@ -3350,7 +3377,7 @@ function backToStory() {
 function goToFinalPage() {
 
     /*
-       ซ่อน pageScreen
+       ซ่อนหน้า pageScreen
     */
 
     document.getElementById(
@@ -3361,7 +3388,19 @@ function goToFinalPage() {
 
 
     /*
-       แสดง finalScreen
+       ซ่อนหน้าเมนูด้วย
+       กรณีเรียกจากปุ่มที่ 5
+    */
+
+    document.getElementById(
+        "menuScreen"
+    ).classList.remove(
+        "active"
+    );
+
+
+    /*
+       แสดงหน้าสุดท้าย
     */
 
     document.getElementById(
@@ -3594,10 +3633,6 @@ function showQuestion() {
 
     text.innerHTML = html;
 
-
-    /*
-       เกมเปิดจากเมนู
-    */
 
     pageMode = "menu";
 
