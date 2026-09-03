@@ -1175,6 +1175,16 @@ body {
 
 <body>
 
+      <audio
+    id="backgroundMusic"
+    loop
+    preload="auto">
+
+    <source
+        src="music.mp3"
+        type="audio/mpeg">
+
+</audio>
 
 <!-- =================================
      หน้าแรก
@@ -1701,7 +1711,7 @@ setInterval(
 
 
 /* =================================
-   เปิดกล่องของขวัญ
+   เปิดกล่องของขวัญ + เปิดเพลง
 ================================= */
 
 function openGift() {
@@ -1709,9 +1719,36 @@ function openGift() {
     const gift =
         document.getElementById("gift");
 
+    const music =
+        document.getElementById("backgroundMusic");
+
+
+    /* =========================
+       เปิดเพลง
+    ========================= */
+
+    music.volume = 0.5;
+
+    music.play().catch(function(error) {
+
+        console.log(
+            "ไม่สามารถเล่นเพลงอัตโนมัติได้:",
+            error
+        );
+
+    });
+
+
+    /* =========================
+       เปิดกล่องของขวัญ
+    ========================= */
 
     gift.classList.add("open");
 
+
+    /* =========================
+       เปลี่ยนไปหน้ารหัสผ่าน
+    ========================= */
 
     setTimeout(function() {
 
@@ -1732,7 +1769,6 @@ function openGift() {
     }, 900);
 
 }
-
 
 
 /* =================================
