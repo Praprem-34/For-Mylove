@@ -2263,6 +2263,14 @@ let pageMode = "menu";
 
 
 /* =================================
+   ตัวแปรเก็บลำดับเรื่องราวปัจจุบัน
+================================= */
+
+let currentStoryNumber = 0;
+
+
+
+/* =================================
    ตั้งวันและเวลานับถอยหลัง
 ================================= */
 
@@ -2623,6 +2631,9 @@ function openPage(page) {
         backButton.textContent =
             "💕 กลับไปหน้าเมนู";
 
+        backButton.onclick =
+            backToMenuDirect;
+
     }
 
 
@@ -2644,6 +2655,9 @@ function openPage(page) {
 
         backButton.textContent =
             "💕 กลับไปหน้าเมนู";
+
+        backButton.onclick =
+            backToMenuDirect;
 
     }
 
@@ -2691,6 +2705,9 @@ function openPage(page) {
 
         backButton.textContent =
             "💕 กลับไปหน้าเมนู";
+
+        backButton.onclick =
+            backToMenuDirect;
 
     }
 
@@ -2860,6 +2877,9 @@ function openPage(page) {
         backButton.textContent =
             "💕 กลับไปหน้าเมนู";
 
+        backButton.onclick =
+            backToMenuDirect;
+
     }
 
 
@@ -2891,6 +2911,17 @@ function showStoryTimeline() {
         document.getElementById(
             "pageText"
         );
+
+    const backButton =
+        document.getElementById(
+            "pageBackButton"
+        );
+
+
+    pageMode = "storyTimeline";
+
+
+    currentStoryNumber = 0;
 
 
     text.innerHTML = `
@@ -3047,6 +3078,19 @@ function showStoryTimeline() {
 
     `;
 
+
+    /*
+       เมื่ออยู่หน้า Timeline
+       ปุ่มด้านล่างต้องกลับเมนูโดยตรง
+    */
+
+    backButton.textContent =
+        "💕 กลับไปหน้าเมนู";
+
+
+    backButton.onclick =
+        backToMenuDirect;
+
 }
 
 
@@ -3076,6 +3120,13 @@ function showStory(number) {
         document.getElementById(
             "pageBackButton"
         );
+
+
+    /*
+       เก็บหมายเลขเรื่องปัจจุบัน
+    */
+
+    currentStoryNumber = number;
 
 
     pageMode = "story";
@@ -3265,6 +3316,7 @@ function showStory(number) {
 
     /* =========================
        เรื่องที่ 6
+       เรื่องสุดท้าย
     ========================= */
 
     else if (number === 6) {
@@ -3311,20 +3363,72 @@ function showStory(number) {
 
 
     /*
-       จุดสำคัญ:
-       เมื่อเปิดเรื่องใดเรื่องหนึ่ง
-       ปุ่มด้านล่างจะเปลี่ยนเป็น
-       "💕 หน้าถัดไป"
+       =========================================
+       ตั้งค่าปุ่มด้านล่าง
+       =========================================
 
-       และกดแล้วไปหน้าสุดท้ายทันที
+       ถ้ายังไม่ถึงเรื่องสุดท้าย
+       ปุ่มจะเป็น "เรื่องต่อไป"
+
+       ถ้าเป็นเรื่องที่ 6
+       ปุ่มจะเป็น "กลับไปหน้าเมนู"
     */
 
-    backButton.textContent =
-        "💕 หน้าถัดไป";
+
+    if (currentStoryNumber < 6) {
+
+        backButton.textContent =
+            "💕 เรื่องต่อไป";
 
 
-    backButton.onclick =
-        goToFinalPage;
+        backButton.onclick =
+            nextStory;
+
+    } else {
+
+        backButton.textContent =
+            "💕 กลับไปหน้าเมนู";
+
+
+        backButton.onclick =
+            backToMenuDirect;
+
+    }
+
+}
+
+
+
+/* =================================
+   ไปเรื่องถัดไป
+================================= */
+
+function nextStory() {
+
+    /*
+       ถ้ายังมีเรื่องถัดไป
+       ให้เปิดเรื่องถัดไป
+    */
+
+    if (
+        currentStoryNumber < 6
+    ) {
+
+        showStory(
+            currentStoryNumber + 1
+        );
+
+        return;
+
+    }
+
+
+    /*
+       ถ้าเป็นเรื่องสุดท้ายแล้ว
+       กลับหน้าเมนู
+    */
+
+    backToMenuDirect();
 
 }
 
@@ -3350,7 +3454,7 @@ function backToStory() {
     showStoryTimeline();
 
 
-    pageMode = "story";
+    pageMode = "storyTimeline";
 
 
     const backButton =
@@ -3364,7 +3468,7 @@ function backToStory() {
 
 
     backButton.onclick =
-        backToMenu;
+        backToMenuDirect;
 
 }
 
@@ -3640,7 +3744,7 @@ function showQuestion() {
         "💕 กลับไปหน้าเมนู";
 
     backButton.onclick =
-        backToMenu;
+        backToMenuDirect;
 
 }
 
@@ -3690,6 +3794,11 @@ function finishGame() {
             "pageText"
         );
 
+    const backButton =
+        document.getElementById(
+            "pageBackButton"
+        );
+
 
     title.textContent =
         "🎉 จบเกมแล้ว!";
@@ -3730,7 +3839,7 @@ function finishGame() {
 
             <button
                 class="main-btn"
-                onclick="backToMenu()">
+                onclick="backToMenuDirect()">
 
                 💕 กลับไปหน้าเมนู
 
@@ -3742,6 +3851,14 @@ function finishGame() {
 
 
     pageMode = "menu";
+
+
+    backButton.textContent =
+        "💕 กลับไปหน้าเมนู";
+
+
+    backButton.onclick =
+        backToMenuDirect;
 
 }
 
@@ -3906,28 +4023,18 @@ function closeMemory() {
    ระบบกลับหน้า
 ================================= */
 
-function backToMenu() {
 
-    /*
-       ถ้าอยู่ในเรื่องราว
-       ให้กลับไป Timeline
-    */
+/*
+   ฟังก์ชันนี้ใช้สำหรับ
+   กลับหน้าเมนูโดยตรง
 
-    if (
-        pageMode === "story"
-    ) {
+   สำคัญ:
+   แยกออกจาก backToStory()
+   เพื่อไม่ให้หน้า Timeline
+   วนกลับมาที่ Timeline เอง
+*/
 
-        backToStory();
-
-        return;
-
-    }
-
-
-    /*
-       กรณีอื่น ๆ
-       กลับเมนูหลักตามปกติ
-    */
+function backToMenuDirect() {
 
     document.getElementById(
         "pageScreen"
@@ -3946,21 +4053,39 @@ function backToMenu() {
     pageMode = "menu";
 
 
+    currentStoryNumber = 0;
+
+
     /*
-       คืนค่าปุ่มกลับ
+       คืนค่าปุ่ม
        เผื่อเปิดหน้าใหม่อีกครั้ง
     */
 
-    document.getElementById(
-        "pageBackButton"
-    ).textContent =
+    const backButton =
+        document.getElementById(
+            "pageBackButton"
+        );
+
+
+    backButton.textContent =
         "💕 กลับไปหน้าเมนู";
 
 
-    document.getElementById(
-        "pageBackButton"
-    ).onclick =
-        backToMenu;
+    backButton.onclick =
+        backToMenuDirect;
+
+}
+
+
+
+/*
+   ฟังก์ชันเดิมสำหรับกลับเมนู
+   ให้ทำงานเหมือนเดิมกับหน้าอื่น ๆ
+*/
+
+function backToMenu() {
+
+    backToMenuDirect();
 
 }
 
