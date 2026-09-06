@@ -1218,6 +1218,21 @@ body {
 
 }
 
+      .final-photo-wall {
+    position: relative;
+    z-index: 1;
+}
+
+/* ให้กล่องข้อความอยู่เหนือรูป */
+.final-photo-wall > *:not(.final-photo) {
+    position: relative;
+    z-index: 10;
+}
+
+/* รูปให้อยู่ชั้นล่าง */
+.final-photo {
+    z-index: 1;
+}
 
 /* =========================
    การ์ดรูป
